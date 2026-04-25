@@ -822,22 +822,74 @@
   .fade-up.visible { opacity: 1; transform: none; }
 
   @media (max-width: 900px) {
-    nav { padding: 14px 20px; }
+    /* NAV */
+    nav { padding: 12px 16px; gap: 8px; }
     .nav-links { display: none; }
-    .hero { padding: 100px 20px 60px; }
+    .nav-logo img { height: 36px !important; width: auto !important; }
+    .nav-cta { padding: 8px 14px; font-size: 0.78rem; white-space: nowrap; flex-shrink: 0; }
+
+    /* HERO */
+    .hero { padding: 90px 16px 60px; }
     .hero-content { grid-template-columns: 1fr; gap: 40px; }
     .hero-right { display: none; }
-    .section-inner { padding: 0 20px; }
-    .problem-grid { grid-template-columns: 1fr; gap: 20px; }
+    .hero-btns { flex-direction: column; }
+    .hero-btns .btn-primary, .hero-btns .btn-secondary { width: 100%; justify-content: center; }
+    .price-pills { flex-direction: column; }
+
+    /* SHARED */
+    .section-inner { padding: 0 16px; }
+
+    /* PROBLEM */
+    .problem-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* SOLUTION */
     .products-grid { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: repeat(2,1fr); }
+
+    /* STATS */
+    .stats-row { grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .big-stat .n { font-size: 2rem; }
+
+    /* TESTIMONIALS */
     .testimonials-grid { grid-template-columns: 1fr; }
-    .steps-timeline { grid-template-columns: 1fr 1fr; }
+
+    /* HOW */
+    .steps-timeline { grid-template-columns: 1fr 1fr; gap: 24px; }
     .steps-timeline::before { display: none; }
-    .sector-content { grid-template-columns: 1fr; gap: 30px; }
-    .urgency-inner { grid-template-columns: 1fr; }
+
+    /* SECTOR */
+    .sector-content { grid-template-columns: 1fr; gap: 30px; padding: 28px 20px; }
+    .sector-tabs { gap: 8px; }
+    .sector-tab { font-size: 0.8rem; padding: 8px 14px; }
+    .sector-stats { grid-template-columns: 1fr 1fr; }
+
+    /* DIAGNOSIS */
+    .diag-card { padding: 28px 20px; }
+    .diag-input-row { flex-direction: column; gap: 10px; }
+    .diag-input { width: 100%; }
+    .diag-input-row .btn-primary { width: 100%; justify-content: center; border-radius: 100px; }
+
+    /* URGENCY */
+    .urgency-section { padding: 60px 0; }
+    .urgency-inner { grid-template-columns: 1fr; gap: 36px; }
+    .countdown-digits { gap: 8px; flex-wrap: nowrap; }
+    .countdown-num { font-size: 1.5rem; padding: 10px 12px; min-width: 52px; }
+    .spots-row { flex-wrap: wrap; }
+
+    /* FAQ */
+    .faq-q { font-size: 0.92rem; padding: 18px 18px; }
+    .faq-a { padding: 0 18px; }
+    .faq-a.open { padding: 0 18px 18px; }
+
+    /* FINAL CTA */
+    .final-btns { flex-direction: column; align-items: stretch; }
+    .final-btns .btn-wa, .final-btns .btn-call, .final-btns .btn-diag { width: 100%; justify-content: center; }
+
+    /* TWEAKS */
     .tweaks-panel { display: none; }
-    .chatbot-window { width: calc(100vw - 48px); right: 24px; }
+
+    /* CHATBOT */
+    .chatbot-window { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+    .chatbot-fab { right: 16px; bottom: 16px; }
   }
 </style>
 </head>
