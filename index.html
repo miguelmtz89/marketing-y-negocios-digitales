@@ -549,7 +549,7 @@
   .spots-row { display: flex; gap: 8px; align-items: center; margin-bottom: 28px; }
   .spot { width: 32px; height: 12px; border-radius: 100px; }
   .spot.taken { background: oklch(50% 0.01 265); }
-  .spot.free { background: var(--orange); }
+  .spot.free { background: var(--lime); }
   .spots-label { font-size: 0.85rem; color: oklch(65% 0.01 265); margin-left: 8px; }
   .countdown-box { text-align: center; }
   .countdown-label { font-size: 0.78rem; color: oklch(60% 0.01 265); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
@@ -822,63 +822,98 @@
   .fade-up.visible { opacity: 1; transform: none; }
 
   @media (max-width: 900px) {
-    nav { padding: 14px 20px; }
+    /* NAV */
+    nav { padding: 12px 16px; gap: 8px; }
     .nav-links { display: none; }
-    .hero { padding: 100px 20px 60px; }
+    .nav-logo img { height: 32px !important; width: auto !important; }
+    .nav-cta { padding: 8px 14px; font-size: 0.78rem; white-space: nowrap; flex-shrink: 0; }
+
+    /* HERO */
+    .hero { padding: 90px 16px 60px; }
     .hero-content { grid-template-columns: 1fr; gap: 40px; }
     .hero-right { display: none; }
-    .section-inner { padding: 0 20px; }
-    .problem-grid { grid-template-columns: 1fr; gap: 20px; }
+    .hero-btns { flex-direction: column; }
+    .hero-btns .btn-primary, .hero-btns .btn-secondary { width: 100%; justify-content: center; }
+    .price-pills { flex-direction: column; }
+
+    /* SHARED */
+    .section-inner { padding: 0 16px; }
+
+    /* PROBLEM */
+    .problem-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* SOLUTION */
     .products-grid { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: repeat(2,1fr); }
+
+    /* STATS */
+    .stats-row { grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .big-stat .n { font-size: 2rem; }
+
+    /* TESTIMONIALS */
     .testimonials-grid { grid-template-columns: 1fr; }
-    .steps-timeline { grid-template-columns: 1fr 1fr; }
+
+    /* HOW */
+    .steps-timeline { grid-template-columns: 1fr 1fr; gap: 24px; }
     .steps-timeline::before { display: none; }
-    .sector-content { grid-template-columns: 1fr; gap: 30px; }
-    .urgency-inner { grid-template-columns: 1fr; }
+
+    /* SECTOR */
+    .sector-content { grid-template-columns: 1fr; gap: 30px; padding: 28px 20px; }
+    .sector-tabs { gap: 8px; }
+    .sector-tab { font-size: 0.8rem; padding: 8px 14px; }
+    .sector-stats { grid-template-columns: 1fr 1fr; }
+
+    /* DIAGNOSIS */
+    .diag-card { padding: 28px 20px; }
+    .diag-input-row { flex-direction: column; gap: 10px; }
+    .diag-input { width: 100%; }
+    .diag-input-row .btn-primary { width: 100%; justify-content: center; border-radius: 100px; }
+
+    /* URGENCY */
+    .urgency-section { padding: 60px 0; }
+    .urgency-inner { grid-template-columns: 1fr; gap: 36px; }
+    .countdown-digits { gap: 8px; flex-wrap: nowrap; }
+    .countdown-num { font-size: 1.5rem; padding: 10px 12px; min-width: 52px; }
+    .spots-row { flex-wrap: wrap; }
+
+    /* FAQ */
+    .faq-q { font-size: 0.92rem; padding: 18px 18px; }
+    .faq-a { padding: 0 18px; }
+    .faq-a.open { padding: 0 18px 18px; }
+
+    /* FINAL CTA */
+    .final-btns { flex-direction: column; align-items: stretch; }
+    .final-btns .btn-wa, .final-btns .btn-call, .final-btns .btn-diag { width: 100%; justify-content: center; }
+
+    /* TWEAKS */
     .tweaks-panel { display: none; }
-    .chatbot-window { width: calc(100vw - 48px); right: 24px; }
+
+    /* CHATBOT */
+    .chatbot-window { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+    .chatbot-fab { right: 16px; bottom: 16px; }
   }
 </style>
-
+<meta name="ext-resource-dependency" content="uploads/logo-optimizado.webp" data-resource-id="logo" />
 <template id="__bundler_thumbnail" data-bg-color="#0d0d16">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="800" fill="#0d0d16"/>
-    <!-- Nav bar -->
     <rect x="0" y="0" width="1200" height="56" fill="#12121f"/>
     <rect x="48" y="20" width="120" height="16" rx="4" fill="#f97316"/>
     <rect x="900" y="18" width="80" height="20" rx="10" fill="#f97316"/>
-    <!-- Hero headline blocks -->
-    <rect x="48" y="100" width="380" height="14" rx="4" fill="#ffffff22"/>
-    <rect x="48" y="130" width="520" height="44" rx="6" fill="#f97316cc"/>
-    <rect x="48" y="184" width="480" height="44" rx="6" fill="#f97316cc"/>
-    <rect x="48" y="238" width="360" height="44" rx="6" fill="#84cc16cc"/>
-    <rect x="48" y="305" width="420" height="14" rx="4" fill="#ffffff33"/>
-    <rect x="48" y="327" width="380" height="14" rx="4" fill="#ffffff22"/>
-    <!-- CTA buttons -->
-    <rect x="48" y="366" width="180" height="44" rx="22" fill="#f97316"/>
-    <rect x="242" y="366" width="160" height="44" rx="22" fill="#ffffff18"/>
-    <!-- Price pills -->
-    <rect x="48" y="430" width="140" height="60" rx="12" fill="#1a1a2e"/>
-    <rect x="200" y="430" width="140" height="60" rx="12" fill="#1a1a2e"/>
-    <!-- Counter card -->
+    <rect x="48" y="100" width="520" height="44" rx="6" fill="#f97316cc"/>
+    <rect x="48" y="160" width="480" height="44" rx="6" fill="#f97316cc"/>
+    <rect x="48" y="220" width="360" height="44" rx="6" fill="#84cc16cc"/>
     <rect x="700" y="90" width="440" height="380" rx="20" fill="#1a1a2e"/>
     <rect x="700" y="90" width="440" height="4" rx="2" fill="#f97316"/>
-    <rect x="820" y="150" width="200" height="80" rx="8" fill="#f9731644"/>
-    <rect x="780" y="260" width="280" height="14" rx="4" fill="#ffffff22"/>
-    <rect x="716" y="300" width="90" height="70" rx="10" fill="#12121f"/>
-    <rect x="820" y="300" width="90" height="70" rx="10" fill="#12121f"/>
-    <rect x="924" y="300" width="90" height="70" rx="10" fill="#12121f"/>
-    <!-- Gradient glow -->
     <ellipse cx="600" cy="400" rx="500" ry="200" fill="#f9731608"/>
   </svg>
 </template>
-</head>
 <body>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <div class="nav-logo">Genera<span>Clientes</span>.mx</div>
+  <div class="nav-logo">
+    <img src="uploads/logo-optimizado.webp" alt="Marketing y Negocios Digitales" style="height: 44px; width: auto; object-fit: contain; display: block" />
+  </div>
   <div class="nav-links">
     <a href="#solucion">Servicios</a>
     <a href="#resultados">Resultados</a>
@@ -891,6 +926,9 @@
 <div id="root"></div>
 
 <script type="text/babel">
+
+
+
 
 
 const { useState, useEffect, useRef } = React;
@@ -1328,13 +1366,13 @@ function App() {
           </div>
           <div className="price-pills">
             <div className="price-pill">
-              <div className="old">$7,000/mes</div>
-              <div className="new">$4,900</div>
+              <div className="old">$8,500/mes</div>
+              <div className="new">$6,500</div>
               <div className="label">Google SEO Local /mes</div>
             </div>
             <div className="price-pill">
-              <div className="old">$13,000</div>
-              <div className="new">$11,000</div>
+              <div className="old">$16,000</div>
+              <div className="new">$12,500</div>
               <div className="label">Página web que vende</div>
             </div>
           </div>
@@ -1427,7 +1465,7 @@ function App() {
           {/* SEO */}
           <div className="product-card seo fade-up">
             <div className="product-tag seo">Google SEO Local</div>
-            <h3 className="product-name">Atrae clientes todos los meses con Google</h3>
+            <h3 className="product-name" style={{ fontFamily: "Verdana" }}>Atrae clientes todos los meses con Google</h3>
             <p className="product-desc">Aparece cuando alguien busca tu negocio en tu ciudad. Sin publicidad. Sin bots. Solo clientes reales que ya quieren comprar.</p>
             <ul className="features-list">
               {[
@@ -1437,14 +1475,15 @@ function App() {
               'Gestión de reseñas y reputación',
               'Asesoría mensual de estrategia',
               'Acciones probadas para atraer tu cliente ideal',
-              'Reportes mensuales en lenguaje simple'].
+              'Reportes mensuales en lenguaje simple',
+              'Página web informativa para mostrar servicios, sin revisar la ruta del cliente'].
               map((f, i) =>
               <li key={i}><div className="check seo">✓</div><span>{f}</span></li>
               )}
             </ul>
             <div className="product-price">
-              <span className="old-price">$7,000</span>
-              <span className="new-price seo">$4,900</span>
+              <span className="old-price">$8,500</span>
+              <span className="new-price seo">$6,500</span>
               <span className="price-period">/mes</span>
             </div>
             <button className="btn-product seo" onClick={() => document.getElementById('cta-final').scrollIntoView()}>
@@ -1454,7 +1493,7 @@ function App() {
           {/* WEB */}
           <div className="product-card web fade-up" style={{ transitionDelay: '0.15s' }}>
             <div className="product-tag web">Página Web</div>
-            <h3 className="product-name">Tu página web que convierte visitas en clientes</h3>
+            <h3 className="product-name" style={{ fontFamily: "Verdana" }}>Tu página web que convierte visitas en clientes</h3>
             <p className="product-desc">No cualquier página. Una máquina de convertir visitas en clientes, optimizada para Google y diseñada para vender.</p>
             <ul className="features-list">
               {[
@@ -1468,14 +1507,16 @@ function App() {
               'Velocidad optimizada (Core Web Vitals)',
               'Diseño responsive (celular primero)',
               'Landing para promociones y combos',
-              'Testimonios y reseñas reales'].
+              'Fotos profesionales del negocio y productos',
+              'Animación en Página Web',
+              'Revisamos la Ruta del Cliente antes de Comprar'].
               map((f, i) =>
               <li key={i}><div className="check web">✓</div><span>{f}</span></li>
               )}
             </ul>
             <div className="product-price">
-              <span className="old-price">$15,000</span>
-              <span className="new-price web">$11,000</span>
+              <span className="old-price">$16,000</span>
+              <span className="new-price web">$12,500</span>
               <span className="price-period">pago único</span>
             </div>
             <button className="btn-product web" onClick={() => document.getElementById('cta-final').scrollIntoView()}>
@@ -1603,13 +1644,13 @@ function App() {
         <div className="urgency-inner">
           <div>
             <div className="section-label" style={{ color: 'var(--orange)' }}>🚨 Oferta limitada</div>
-            <h2 className="urgency-headline">Solo <span className="orange">5 negocios</span> por zona<br />este mes</h2>
+            <h2 className="urgency-headline" style={{ fontFamily: "Verdana" }}>Solo <span className="orange">5 negocios</span> por zona<br />este mes</h2>
             <p className="urgency-sub">Para garantizar resultados, trabajamos con un número limitado de negocios por ciudad y giro. No saturamos zonas.</p>
             <div className="spots-row">
-              {[...Array(5)].map((_, i) =>
-              <div key={i} className={`spot ${i < 3 ? 'taken' : 'free'}`}></div>
-              )}
-              <span className="spots-label">3 cupos tomados · <strong style={{ color: 'var(--orange)' }}>2 disponibles</strong></span>
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className={`spot ${i < 3 ? 'taken' : 'free'}`}></div>
+              ))}
+              <span className="spots-label"><strong style={{color:'var(--white)'}}>3 ocupados</strong> · <strong style={{color:'var(--lime)'}}>2 disponibles</strong></span>
             </div>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <button className="btn-primary" onClick={() => document.getElementById('cta-final').scrollIntoView()}>
@@ -1622,7 +1663,7 @@ function App() {
             <div className="countdown-digits">
               {[
               { n: String(countdown.d).padStart(2, '0'), l: 'días' },
-              { n: String(countdown.h).padStart(2, '0'), l: 'horas' },
+              { n: '03', l: 'horas' },
               { n: String(countdown.m).padStart(2, '0'), l: 'min' },
               { n: String(countdown.s).padStart(2, '0'), l: 'seg' }].
               map((u, i) =>
@@ -1661,7 +1702,7 @@ function App() {
         </h2>
         <p className="final-sub">El momento de actuar es ahora. Hay personas buscando exactamente lo que ofreces.</p>
         <div className="final-btns">
-          <a href="https://wa.me/521234567890?text=Hola,%20quiero%20más%20información%20sobre%20generar%20clientes%20con%20Google" className="btn-wa">
+          <a href="https://wa.me/525665817161?text=Hola,%20quiero%20más%20información%20sobre%20generar%20clientes%20con%20Google" className="btn-wa">
             <span>💬</span> Escribir por WhatsApp
           </a>
           <button className="btn-call">
@@ -1681,7 +1722,7 @@ function App() {
     </section>
 
     <footer>
-      © 2025 <span>GeneraClientes.mx</span> · SEO Local & Páginas Web para Negocios · Todos los derechos reservados
+      © 2025 <span>Marketingynegociosdigitales.com</span> · SEO Local & Páginas Web para Negocios · Todos los derechos reservados
     </footer>
 
     {/* CHATBOT */}
