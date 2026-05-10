@@ -227,5 +227,72 @@ document.addEventListener('DOMContentLoaded', async function() {
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        // Inyectar CSS si no existe
+        if (!document.querySelector('style[data-servicios]')) {
+          const style = document.createElement('style');
+          style.setAttribute('data-servicios', 'true');
+          style.textContent = `
+            .servicios { padding: 60px 20px; background: #f5f5f5; text-align: center; }
+            .servicios h2 { font-size: 32px; margin-bottom: 40px; color: #333; font-weight: 600; }
+            .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+            .tarjeta { background: white; padding: 40px 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+            .tarjeta:hover { transform: translateY(-8px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+            .tarjeta h3 { font-size: 24px; margin-bottom: 15px; color: #333; }
+            .tarjeta p { color: #666; font-size: 15px; margin-bottom: 25px; line-height: 1.6; }
+            .tarjeta a { display: inline-block; padding: 12px 30px; background: #f97316; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.3s; }
+            .tarjeta a:hover { background: #ea6317; }
+          `;
+          document.head.appendChild(style);
+        }
+
+        // Inyectar HTML de tarjetas
+        const servicios = document.querySelector('section.servicios');
+        if (!servicios) {
+          const footer = document.querySelector('footer');
+          const section = document.createElement('section');
+          section.className = 'servicios';
+          section.innerHTML = `
+            <h2>Nuestros Servicios Especializados</h2>
+            <div class="grid-servicios">
+              <div class="tarjeta">
+                <h3>⚖️ Para Abogados</h3>
+                <p>Soluciones web y marketing especializado para despachos de abogados. Posicionamiento en Google y captación de clientes.</p>
+                <a href="/abogados/">Ver Más →</a>
+              </div>
+              <div class="tarjeta">
+                <h3>🏥 Para Doctores</h3>
+                <p>Páginas web profesionales para consultorios médicos. Sistema de agendamiento online y gestión de pacientes.</p>
+                <a href="/doctor/">Ver Más →</a>
+              </div>
+              <div class="tarjeta">
+                <h3>🍽️ Para Restaurantes</h3>
+                <p>Menú digital interactivo, sistema de reservas online y estrategia de marketing gastronómico integrada.</p>
+                <a href="/restaurante/">Ver Más →</a>
+              </div>
+              <div class="tarjeta">
+                <h3>🍕 Para Pizzerías</h3>
+                <p>Sistema de pedidos online, integración con plataformas de delivery y promociones automáticas.</p>
+                <a href="/pizzeria/">Ver Más →</a>
+              </div>
+              <div class="tarjeta">
+                <h3>🏪 Negocios Locales</h3>
+                <p>Soluciones integrales de marketing digital para cualquier tipo de negocio local. Posicionamiento, visibilidad y captación de clientes.</p>
+                <a href="/negocio-local/">Ver Más →</a>
+              </div>
+            </div>
+          `;
+          if (footer) {
+            footer.parentNode.insertBefore(section, footer);
+          } else {
+            document.body.appendChild(section);
+          }
+        }
+      }, 500);
+    });
+  </script>
 </body>
 </html>
