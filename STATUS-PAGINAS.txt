@@ -1,0 +1,179 @@
+════════════════════════════════════════════════════════════════════════════════
+  STATUS DE PÁGINAS - Marketing y Negocios Digitales
+════════════════════════════════════════════════════════════════════════════════
+
+PÁGINA                  ESTADO    CSS    JS     FUENTES         PROBLEMA
+────────────────────────────────────────────────────────────────────────────────
+✅ /abogados/           FUNCIONA  ✅    ✅     Inter+Fraunces  NINGUNO
+✅ /pizzeria/           FUNCIONA  ✅    ✅     Inter+Fraunces  NINGUNO
+❌ /restaurante/        ROTO      ❌    ❌     Inter+Fraunces  SIN CSS/JS
+❌ /doctor/             ROTO      ❌    ❌     Manrope+Archivo SIN CSS/JS + FUENTES
+✅ /negocio-local/      FUNCIONA  ✅    ✅     Inter+Fraunces  NINGUNO
+❌ / (raíz)             PARCIAL   N/A   N/A    N/A             SIN PÁGINA INDEX
+
+
+════════════════════════════════════════════════════════════════════════════════
+  PROBLEMAS ESPECÍFICOS
+════════════════════════════════════════════════════════════════════════════════
+
+🔴 RESTAURANTE (/restaurante/)
+   └─ index.html existe ✅
+   └─ styles.css NO EXISTE ❌
+   └─ scripts.js NO EXISTE ❌
+   └─ RESULTADO: Página sin estilos (solo HTML básico)
+   └─ SOLUCIÓN: Copiar estilos de /pizzeria/
+
+🔴 DOCTOR (/doctor/)
+   └─ index.html existe ✅
+   └─ styles.css NO EXISTE ❌
+   └─ scripts.js NO EXISTE ❌
+   └─ Usa fuentes Google DIFERENTES ⚠️
+   └─ RESULTADO: Página sin estilos (solo HTML básico)
+   └─ SOLUCIÓN: Crear CSS + unificar fuentes
+
+🟡 CONFLICTOS DETECTADOS
+   └─ IDs duplicados (contacto, faq, etc) en múltiples archivos
+      └─ RIESGO: Bajo (cada carpeta es independiente)
+
+   └─ Código HTML DUPLICADO (~95% igual entre abogados/pizzeria/restaurante)
+      └─ RIESGO: Alto mantenimiento futuro
+      └─ SOLUCIÓN: Refactorizar con template único
+
+   └─ Fuentes inconsistentes
+      └─ doctor/ usa: Manrope + Archivo
+      └─ otros usan: Inter + Inter Tight + Fraunces
+      └─ RIESGO: Marca visual inconsistente
+
+
+════════════════════════════════════════════════════════════════════════════════
+  RUTAS CSS Y JS - ANÁLISIS DETALLADO
+════════════════════════════════════════════════════════════════════════════════
+
+✅ ABOGADOS/INDEX.HTML
+   Línea 11:  <link rel="stylesheet" href="styles.css">
+   Busca en:  /abogados/styles.css  ✅ EXISTE
+
+   Línea 639: <script src="scripts.js"></script>
+   Busca en:  /abogados/scripts.js   ✅ EXISTE
+
+
+✅ PIZZERIA/INDEX.HTML
+   Línea 11:  <link rel="stylesheet" href="styles.css">
+   Busca en:  /pizzeria/styles.css   ✅ EXISTE
+
+   Línea 626: <script src="scripts.js"></script>
+   Busca en:  /pizzeria/scripts.js    ✅ EXISTE
+
+
+❌ RESTAURANTE/INDEX.HTML
+   Línea 11:  <link rel="stylesheet" href="styles.css">
+   Busca en:  /restaurante/styles.css ❌ NO EXISTE
+
+   Línea ???: <script src="scripts.js"></script>
+   Busca en:  /restaurante/scripts.js  ❌ NO EXISTE
+
+
+❌ DOCTOR/INDEX.HTML
+   Línea 9:   <link href="...Manrope...Archivo...">
+   Busca en:  Google Fonts            ✅ EXISTE
+
+   Línea 11:  ❌ NO TIENE <link rel="stylesheet" href="...">
+   Busca en:  /doctor/styles.css      ❌ NO EXISTE
+
+   Línea ???: <script src="scripts.js"></script>
+   Busca en:  /doctor/scripts.js       ❌ NO EXISTE
+
+
+✅ NEGOCIO-LOCAL/INDEX.HTML
+   Línea 11:  <link rel="stylesheet" href="styles.css">
+   Busca en:  /negocio-local/styles.css ✅ EXISTE
+
+   Línea ???: <script src="scripts.js"></script>
+   Busca en:  /negocio-local/scripts.js  ✅ EXISTE
+
+
+════════════════════════════════════════════════════════════════════════════════
+  ¿CÓMO ABRIR LAS PÁGINAS CORRECTAMENTE?
+════════════════════════════════════════════════════════════════════════════════
+
+URL ESPERADA              CARPETA              ARCHIVO              FUNCIONA?
+──────────────────────────────────────────────────────────────────────────────
+marketing-y...com/        /raíz/               index.html           ❌ NO
+marketing-y...com/abogados /abogados/          index.html + CSS + JS ✅ SÍ
+marketing-y...com/pizzeria /pizzeria/          index.html + CSS + JS ✅ SÍ
+marketing-y...com/restaurante /restaurante/   index.html SOLO      ❌ NO
+marketing-y...com/doctor  /doctor/             index.html SOLO      ❌ NO
+marketing-y...com/negocio-local /negocio-local/ index.html + CSS + JS ✅ SÍ
+
+
+════════════════════════════════════════════════════════════════════════════════
+  ACCIONES RECOMENDADAS (EN ORDEN)
+════════════════════════════════════════════════════════════════════════════════
+
+PRIORIDAD 1 (CRÍTICO - Hoy):
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Copiar /pizzeria/styles.css → /restaurante/styles.css
+  2. Copiar /pizzeria/scripts.js → /restaurante/scripts.js
+  3. Copiar /pizzeria/styles.css → /doctor/styles.css
+  4. Copiar /pizzeria/scripts.js → /doctor/scripts.js
+
+  Tiempo: 5-10 minutos
+  Impacto: Restaurante y Doctor funcionarán correctamente
+
+
+PRIORIDAD 2 (IMPORTANTE - Esta semana):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. Crear /index.html con menú de navegación central
+  6. Estandarizar fuentes Google en ALL pages
+  7. Crear sitemap.xml
+
+  Tiempo: 30-45 minutos
+  Impacto: Mejor UX + mejor SEO
+
+
+PRIORIDAD 3 (MANTENIMIENTO - Este mes):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  8. Refactorizar código duplicado (usar template único)
+  9. Implementar sistema de build automatizado
+  10. Crear Google Analytics tracking único
+
+  Tiempo: 4-6 horas
+  Impacto: Reducir mantenimiento futuro en 80%
+
+
+════════════════════════════════════════════════════════════════════════════════
+  CONFLICTOS ENTRE PÁGINAS - ANÁLISIS DE RIESGO
+════════════════════════════════════════════════════════════════════════════════
+
+POTENCIAL CONFLICTO          RIESGO   NOTA
+────────────────────────────────────────────────────────────────────────────────
+IDs duplicados               BAJO     Cada página está aislada en su carpeta
+Variables CSS dup.           BAJO     CSS también está aislado
+Fuentes inconsistentes       MEDIO    Afecta marca visual
+Código HTML duplicado        ALTO     Mantenimiento pesado en futuros cambios
+WhatsApp URL centralizado    BAJO     Es intencional
+Google Fonts duplicados      BAJO     Cargas múltiples pero no hay conflicto
+
+
+════════════════════════════════════════════════════════════════════════════════
+  RESUMEN FINAL
+════════════════════════════════════════════════════════════════════════════════
+
+✅ FUNCIONANDO:          3 de 5 páginas (abogados, pizzeria, negocio-local)
+❌ ROTO:                 2 de 5 páginas (restaurante, doctor)
+⚠️  CONFLICTOS:          2 problemas principales
+                         - Código duplicado
+                         - Fuentes inconsistentes
+
+📊 SCORE ACTUAL:         60% de funcionalidad
+
+🔧 PARA LLEGAR A 100%:
+   • CRÍTICO: 10 minutos (crear CSS/JS para restaurante y doctor)
+   • IMPORTANTE: 45 minutos (menú central + fuentes)
+   • COMPLETO: 6 horas (refactorizar todo)
+
+
+════════════════════════════════════════════════════════════════════════════════
+Análisis realizado: 2026-05-09
+Actualización recomendada: Hoy
+════════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doctores y Especialistas — Atrae Pacientes con Google | Marketing y Negocios Digitales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1220;
+    --bg-2:#101a2e;
+    --bg-card:#0f1a2e;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.16);
+    --ink:#0a1430;
+    --ink-soft:#3a4663;
+    --paper:#f6f1e8;
+    --paper-2:#efe7d6;
+    --orange:#ff6a13;
+    --orange-2:#ff8a3d;
+    --lime:#c9e15c;
+    --green:#1ea660;
+    --white:#ffffff;
+    --muted:#8a96b3;
+    --shadow-sm:0 1px 2px rgba(8,12,28,.08);
+    --shadow:0 12px 40px rgba(8,12,28,.12);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Manrope',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .orange{color:var(--orange)}
+  .lime{color:var(--lime)}
+
+  /* NAV */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand img{height:42px;width:auto;display:block}
+  .brand-text{color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:14px;line-height:1.05;letter-spacing:.01em}
+  .brand-text span{color:var(--orange)}
+  .nav-links{display:flex;gap:34px;color:#cfd6e6;font-weight:500;font-size:15px}
+  .nav-links a{color:inherit;text-decoration:none}
+  .nav-links a:hover{color:var(--orange)}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 22px;border-radius:999px;
+    font-weight:700;font-size:15px;text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 24px rgba(255,106,19,.35)}
+  .btn-primary:hover{background:var(--orange-2);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+  .btn-wa{background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.35)}
+  .btn-wa:hover{background:#1fb858;transform:translateY(-1px)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:#000;transform:translateY(-1px)}
+  .arrow{display:inline-block;transition:transform .2s}
+  .btn:hover .arrow{transform:translateX(3px)}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(ellipse at 70% 0%, #14223e 0%, var(--bg) 60%);
+    color:#fff;
+    padding:80px 0 100px;
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    color:var(--orange);font-weight:700;font-size:13px;
+    letter-spacing:.16em;text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--orange)}
+  h1.hero-title{
+    font-size:84px;margin:0 0 24px;color:#fff;
+  }
+  h1.hero-title em{color:var(--orange);font-style:normal}
+  .hero-sub{font-size:20px;color:#bcc5d9;max-width:560px;margin:0 0 32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+  .hero-trust{display:flex;gap:32px;flex-wrap:wrap;color:#a1aac2;font-size:14px;font-weight:600}
+  .hero-trust b{color:#fff;display:block;font-family:'Archivo';font-size:22px;font-weight:800;line-height:1}
+  .hero-trust .item{display:flex;flex-direction:column;gap:4px}
+
+  /* HERO CARD — google profile mockup */
+  .gprofile{
+    background:#0f1a2e;
+    border:1px solid var(--line-strong);
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+    position:relative;
+  }
+  .gprofile::before{
+    content:"";position:absolute;inset:-1px -1px auto -1px;height:3px;
+    background:linear-gradient(90deg,var(--orange) 0%,#ffb547 50%,var(--lime) 100%);
+    border-radius:20px 20px 0 0;
+  }
+  .gp-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .gp-search{
+    display:flex;align-items:center;gap:10px;background:#1a2540;border-radius:999px;padding:10px 16px;color:#cfd6e6;font-size:14px;flex:1
+  }
+  .gp-search svg{flex:0 0 auto}
+  .gp-card{
+    background:#091224;border-radius:14px;padding:18px;border:1px solid var(--line);
+  }
+  .gp-doctor{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+  .gp-avatar{
+    width:56px;height:56px;border-radius:14px;flex:0 0 auto;
+    background:linear-gradient(135deg,#1c2c52,#2a3e6e);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:'Archivo';font-weight:800;font-size:22px;
+  }
+  .gp-name{font-family:'Archivo';font-weight:800;color:#fff;font-size:18px;margin:0 0 2px}
+  .gp-spec{color:#8a96b3;font-size:13px;margin:0 0 6px}
+  .gp-rating{display:flex;align-items:center;gap:6px;font-size:13px;color:#cfd6e6}
+  .stars{color:#ffc24a;letter-spacing:1px;font-size:13px}
+  .gp-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .chip{font-size:12px;color:#cfd6e6;background:#142040;border-radius:999px;padding:5px 10px;border:1px solid var(--line)}
+  .chip.open{color:var(--lime);border-color:rgba(201,225,92,.3)}
+  .gp-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+  .gp-action{
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    background:#142040;border:1px solid var(--line);
+    border-radius:10px;padding:12px 6px;color:#cfd6e6;font-size:11px;font-weight:600
+  }
+  .gp-action.primary{background:rgba(255,106,19,.15);border-color:var(--orange);color:var(--orange)}
+  .gp-stats{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px
+  }
+  .gp-stat{
+    background:#091224;border:1px solid var(--line);border-radius:12px;padding:14px
+  }
+  .gp-stat .lab{font-size:11px;color:#8a96b3;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:6px}
+  .gp-stat .val{font-family:'Archivo';font-weight:800;font-size:30px;color:var(--lime);line-height:1}
+  .gp-stat.alt .val{color:var(--orange)}
+  .gp-stat .delta{font-size:12px;color:#8a96b3;margin-top:4px}
+  .gp-stat .delta b{color:var(--lime)}
+
+  /* SECTIONS */
+  section{padding:110px 0}
+  .sec-eyebrow{
+    color:var(--orange);font-weight:700;font-size:13px;
+    letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px
+  }
+  h2.sec-title{
+    font-size:64px;margin:0 0 24px;color:var(--ink);max-width:900px;
+  }
+  h2.sec-title em{color:var(--orange);font-style:normal}
+  .sec-lead{font-size:20px;color:var(--ink-soft);max-width:760px;margin:0 0 60px}
+
+  /* PROBLEM */
+  .problem{background:var(--paper)}
+  .problem-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
+  .problem-list{display:flex;flex-direction:column;gap:16px}
+  .p-item{
+    background:#fff;border-radius:18px;padding:24px 26px;
+    display:flex;gap:18px;box-shadow:var(--shadow-sm);
+    border:1px solid rgba(10,20,48,.06);
+  }
+  .p-icon{
+    width:48px;height:48px;border-radius:12px;flex:0 0 auto;
+    background:#fff3eb;color:var(--orange);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .p-item h4{font-family:'Archivo';font-weight:800;font-size:20px;margin:0 0 4px;color:var(--ink)}
+  .p-item p{margin:0;color:var(--ink-soft);font-size:15px}
+
+  .case-card{
+    background:var(--bg);color:#fff;
+    border-radius:24px;padding:36px;
+    position:relative;overflow:hidden;
+  }
+  .case-card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:3px;
+    background:linear-gradient(90deg,var(--orange),#ffb547,var(--lime));
+  }
+  .case-tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+  .case-tab{
+    font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;
+    background:transparent;color:#bcc5d9;border:1px solid var(--line-strong);
+    cursor:pointer;transition:all .15s
+  }
+  .case-tab.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .case-body{font-size:18px;line-height:1.55;color:#dfe5f1;min-height:160px}
+  .case-body b{color:#fff}
+  .case-body .hl{color:var(--orange);font-weight:700}
+  .case-foot{
+    margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    border-top:1px solid var(--line);padding-top:22px
+  }
+  .case-foot .lab{font-size:11px;color:#8a96b3;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+  .case-foot .val{font-family:'Archivo';font-weight:800;font-size:26px;color:var(--lime);line-height:1;margin-top:6px}
+  .case-foot .val.orange{color:var(--orange)}
+
+  /* SEARCH VOLUME */
+  .search{background:var(--bg);color:#fff;position:relative;overflow:hidden}
+  .search::before{
+    content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;
+    background:radial-gradient(circle,rgba(255,106,19,.12),transparent 70%);
+    pointer-events:none
+  }
+  .search h2.sec-title{color:#fff}
+  .search .sec-lead{color:#bcc5d9}
+  .vol-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+  .vol-list{display:flex;flex-direction:column;gap:14px}
+  .vol-row{
+    background:#0f1a2e;border:1px solid var(--line);
+    border-radius:14px;padding:18px 22px;
+    display:grid;grid-template-columns:1fr auto auto;gap:20px;align-items:center
+  }
+  .vol-q{font-weight:600;color:#fff;font-size:16px}
+  .vol-q small{display:block;color:#8a96b3;font-size:12px;font-weight:500;margin-top:2px}
+  .vol-bar{width:200px;height:8px;background:#1a2540;border-radius:999px;overflow:hidden}
+  .vol-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--orange),var(--lime));border-radius:999px}
+  .vol-num{font-family:'Archivo';font-weight:800;font-size:22px;color:var(--lime);line-height:1;text-align:right;min-width:90px}
+  .vol-num small{display:block;font-size:10px;color:#8a96b3;font-weight:600;letter-spacing:.1em;margin-top:2px;text-transform:uppercase}
+
+  .big-stat{
+    background:#0f1a2e;border:1px solid var(--line);border-radius:24px;
+    padding:36px;position:relative;overflow:hidden;
+  }
+  .big-stat::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:3px;
+    background:linear-gradient(90deg,var(--orange),var(--lime));
+  }
+  .big-stat .lab{color:#8a96b3;font-size:13px;text-transform:uppercase;letter-spacing:.16em;font-weight:700;margin-bottom:14px}
+  .big-stat .val{
+    font-family:'Archivo';font-weight:800;font-size:120px;line-height:.9;
+    background:linear-gradient(90deg,var(--orange),var(--lime));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:14px;letter-spacing:-.04em
+  }
+  .big-stat .desc{color:#dfe5f1;font-size:17px;line-height:1.5}
+  .big-stat .desc b{color:#fff}
+  .big-stat .foot{
+    margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
+    color:#8a96b3;font-size:13px
+  }
+
+  /* HOW IT WORKS */
+  .how{background:var(--paper)}
+  .step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:50px}
+  .step{
+    background:#fff;border-radius:20px;padding:28px;
+    box-shadow:var(--shadow-sm);border:1px solid rgba(10,20,48,.06);
+    position:relative
+  }
+  .step-num{
+    font-family:'Archivo';font-weight:800;font-size:48px;
+    background:linear-gradient(135deg,var(--orange),#ffb547);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    line-height:1;margin-bottom:14px;letter-spacing:-.03em
+  }
+  .step h4{font-family:'Archivo';font-weight:800;font-size:21px;margin:0 0 10px;color:var(--ink);line-height:1.2}
+  .step p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.55}
+
+  /* CASES STRIP */
+  .cases{background:var(--bg);color:#fff;position:relative;overflow:hidden}
+  .cases h2.sec-title{color:#fff}
+  .cases .sec-lead{color:#bcc5d9}
+  .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .case2{
+    background:#0f1a2e;border:1px solid var(--line);border-radius:20px;padding:30px;
+    display:flex;flex-direction:column;gap:18px
+  }
+  .case2-spec{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+  .case2-quote{font-size:17px;line-height:1.55;color:#dfe5f1;flex:1}
+  .case2-quote b{color:var(--orange)}
+  .case2-foot{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+  .case2-foot .lab{font-size:10px;color:#8a96b3;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+  .case2-foot .val{font-family:'Archivo';font-weight:800;font-size:26px;color:var(--lime);line-height:1;margin-top:4px}
+  .case2-foot .val.alt{color:var(--orange)}
+  .case2-author{display:flex;align-items:center;gap:12px;color:#cfd6e6;font-size:13px}
+  .case2-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#2a3e6e,#1c2c52);display:flex;align-items:center;justify-content:center;font-family:'Archivo';font-weight:800;color:#fff;font-size:13px}
+  .case2-author b{color:#fff;display:block}
+  .case2-author small{color:#8a96b3}
+
+  /* COMPARE */
+  .compare{background:var(--paper-2)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
+  .col{
+    background:#fff;border-radius:24px;padding:36px;
+    border:1px solid rgba(10,20,48,.06);box-shadow:var(--shadow-sm)
+  }
+  .col.bad{background:#fff6f2;border-color:rgba(255,106,19,.2)}
+  .col.good{background:var(--bg);color:#fff;border-color:transparent;position:relative;overflow:hidden}
+  .col.good::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:3px;
+    background:linear-gradient(90deg,var(--orange),var(--lime))
+  }
+  .col h3{font-family:'Archivo';font-weight:800;font-size:28px;margin:0 0 6px;color:var(--ink);line-height:1.15}
+  .col.good h3{color:#fff}
+  .col-tag{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+  .col.bad .col-tag{color:#c14a18}
+  .col.good .col-tag{color:var(--lime)}
+  .col ul{list-style:none;padding:0;margin:18px 0 0}
+  .col li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid rgba(10,20,48,.06);font-size:16px;line-height:1.5}
+  .col.good li{border-bottom-color:var(--line);color:#dfe5f1}
+  .col li:last-child{border-bottom:none}
+  .ico{
+    width:24px;height:24px;border-radius:50%;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:13px;margin-top:1px
+  }
+  .ico.x{background:#ffe1d1;color:#c14a18}
+  .ico.v{background:rgba(201,225,92,.2);color:var(--lime)}
+
+  /* WHY UPDATE */
+  .why{background:var(--paper);position:relative;overflow:hidden}
+  .why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .why h2.sec-title{color:var(--ink)}
+  .calendar{
+    background:#fff;border-radius:24px;padding:32px;box-shadow:var(--shadow);
+    border:1px solid rgba(10,20,48,.06);
+  }
+  .cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+  .cal-head h4{font-family:'Archivo';font-weight:800;font-size:20px;margin:0;color:var(--ink)}
+  .cal-head .pill{background:rgba(30,166,96,.12);color:var(--green);font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .cal-day{
+    aspect-ratio:1;border-radius:8px;background:#f4eee2;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;color:var(--ink-soft);font-weight:600;
+    position:relative
+  }
+  .cal-day.active{background:var(--orange);color:#fff}
+  .cal-day.dim{opacity:.35}
+  .cal-day.has::after{
+    content:"";position:absolute;bottom:4px;width:5px;height:5px;border-radius:50%;background:var(--lime)
+  }
+  .cal-day.active.has::after{background:#fff}
+  .cal-foot{margin-top:22px;padding-top:18px;border-top:1px solid rgba(10,20,48,.06);display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cal-stat .lab{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--ink-soft);margin-bottom:4px}
+  .cal-stat .val{font-family:'Archivo';font-weight:800;font-size:28px;color:var(--orange);line-height:1}
+  .why-list{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+  .why-list .row{display:flex;gap:16px;align-items:flex-start}
+  .why-list .num{
+    font-family:'Archivo';font-weight:800;font-size:18px;
+    width:36px;height:36px;border-radius:10px;flex:0 0 auto;
+    background:var(--orange);color:#fff;
+    display:flex;align-items:center;justify-content:center
+  }
+  .why-list h5{font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 4px;color:var(--ink)}
+  .why-list p{margin:0;color:var(--ink-soft);font-size:15px}
+
+  /* SERVICES */
+  .services{background:var(--bg);color:#fff}
+  .services h2.sec-title{color:#fff}
+  .services .sec-lead{color:#bcc5d9}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+  .svc{
+    background:#0f1a2e;border:1px solid var(--line);border-radius:18px;
+    padding:28px;display:flex;flex-direction:column;gap:14px
+  }
+  .svc-ico{
+    width:46px;height:46px;border-radius:12px;
+    background:rgba(255,106,19,.12);color:var(--orange);
+    display:flex;align-items:center;justify-content:center
+  }
+  .svc h4{font-family:'Archivo';font-weight:800;font-size:19px;margin:0;color:#fff;line-height:1.25}
+  .svc p{margin:0;color:#bcc5d9;font-size:15px;line-height:1.55}
+
+  /* COFEPRIS / EXCLUSIVITY */
+  .trust{background:var(--paper-2)}
+  .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .trust-card{
+    background:#fff;border-radius:24px;padding:40px;
+    border:1px solid rgba(10,20,48,.06);box-shadow:var(--shadow-sm)
+  }
+  .trust-card .icon-lg{
+    width:56px;height:56px;border-radius:14px;background:#fff3eb;color:var(--orange);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px
+  }
+  .trust-card h3{font-family:'Archivo';font-weight:800;font-size:28px;margin:0 0 14px;color:var(--ink);line-height:1.2}
+  .trust-card p{margin:0 0 14px;color:var(--ink-soft);font-size:16px;line-height:1.6}
+  .trust-card p:last-child{margin-bottom:0}
+  .trust-card b{color:var(--ink)}
+  .trust-card .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(30,166,96,.12);color:var(--green);font-weight:700;font-size:13px;
+    padding:6px 14px;border-radius:999px;margin-top:14px
+  }
+
+  /* FAQ */
+  .faq{background:var(--paper)}
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  details.q{
+    background:#fff;border-radius:14px;padding:22px 26px;
+    border:1px solid rgba(10,20,48,.08);
+    box-shadow:var(--shadow-sm);
+  }
+  details.q[open]{border-color:var(--orange)}
+  details.q summary{
+    list-style:none;cursor:pointer;
+    font-family:'Archivo';font-weight:700;font-size:18px;color:var(--ink);
+    display:flex;justify-content:space-between;gap:14px;align-items:center;line-height:1.3
+  }
+  details.q summary::-webkit-details-marker{display:none}
+  details.q summary::after{
+    content:"+";font-family:'Archivo';color:var(--orange);font-size:24px;font-weight:800;flex:0 0 auto;line-height:1
+  }
+  details.q[open] summary::after{content:"−"}
+  details.q p{margin:14px 0 0;color:var(--ink-soft);font-size:16px;line-height:1.6}
+
+  /* CTA */
+  .cta{
+    background:var(--bg);color:#fff;
+    background-image:radial-gradient(ellipse at 20% 0%, rgba(255,106,19,.18), transparent 60%),
+                     radial-gradient(ellipse at 80% 100%, rgba(201,225,92,.12), transparent 60%);
+  }
+  .cta-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+  .cta h2{font-family:'Archivo';font-weight:800;font-size:64px;line-height:1.02;color:#fff;letter-spacing:-.02em;margin:0 0 24px}
+  .cta h2 em{color:var(--orange);font-style:normal}
+  .cta p.lead{font-size:19px;color:#bcc5d9;max-width:560px;margin:0 0 28px}
+  .cta-bullets{list-style:none;padding:0;margin:0 0 36px;display:flex;flex-direction:column;gap:12px}
+  .cta-bullets li{display:flex;gap:12px;align-items:center;color:#dfe5f1;font-size:16px}
+  .cta-bullets .ico.v{background:rgba(201,225,92,.2);color:var(--lime)}
+
+  .form-card{
+    background:#fff;color:var(--ink);border-radius:24px;padding:32px;
+    box-shadow:0 30px 80px rgba(0,0,0,.4);border:1px solid var(--line-strong);
+    position:relative;overflow:hidden
+  }
+  .form-card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:4px;
+    background:linear-gradient(90deg,var(--orange),var(--lime))
+  }
+  .form-head{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .wa-ico{
+    width:44px;height:44px;border-radius:12px;background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto
+  }
+  .form-head h3{font-family:'Archivo';font-weight:800;font-size:22px;margin:0;line-height:1.15}
+  .form-head small{display:block;color:var(--ink-soft);font-size:13px;font-weight:600;margin-top:2px}
+  .form-card .intro{color:var(--ink-soft);font-size:15px;margin:14px 0 22px;line-height:1.5}
+  .form-card label{display:block;font-weight:700;font-size:13px;color:var(--ink);margin:14px 0 6px}
+  .form-card input,.form-card select{
+    width:100%;padding:13px 14px;border-radius:10px;
+    border:1px solid rgba(10,20,48,.15);background:#fafaf7;color:var(--ink);
+    font-family:inherit;font-size:15px;outline:none;transition:border-color .15s
+  }
+  .form-card input:focus,.form-card select:focus{border-color:var(--orange)}
+  .form-card .submit{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;background:#25D366;color:#fff;border:none;
+    padding:16px;border-radius:12px;font-weight:800;font-size:16px;
+    cursor:pointer;margin-top:22px;font-family:inherit;
+    transition:background .15s,transform .15s
+  }
+  .form-card .submit:hover{background:#1fb858;transform:translateY(-1px)}
+  .form-card .legal{font-size:12px;color:var(--ink-soft);margin:14px 0 0;text-align:center}
+
+  /* FOOTER */
+  footer{background:#070d1a;color:#8a96b3;padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  footer h5{color:#fff;font-family:'Archivo';font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 16px}
+  footer a{color:#bcc5d9;text-decoration:none;font-size:14px;display:block;padding:4px 0}
+  footer a:hover{color:var(--orange)}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .foot-brand img{height:46px;width:auto}
+  .foot-brand .t{font-family:'Archivo';font-weight:800;color:#fff;line-height:1.05;font-size:15px}
+  .foot-brand .t span{color:var(--orange)}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding-top:24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    font-size:13px
+  }
+
+  /* WhatsApp floating button */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:60;
+    width:60px;height:60px;border-radius:50%;
+    background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 32px rgba(37,211,102,.5);
+    text-decoration:none;
+    transition:transform .15s
+  }
+  .wa-float:hover{transform:scale(1.08)}
+
+  /* responsive */
+  @media (max-width:1024px){
+    h1.hero-title{font-size:60px}
+    h2.sec-title{font-size:44px}
+    .cta h2{font-size:44px}
+    .hero-grid,.problem-grid,.vol-grid,.why-grid,.cta-grid{grid-template-columns:1fr;gap:48px}
+    .step-grid{grid-template-columns:repeat(2,1fr)}
+    .cases-grid,.svc-grid{grid-template-columns:1fr 1fr}
+    .compare-grid,.trust-grid,.faq-grid,.foot-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+    section{padding:80px 0}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px}
+    h1.hero-title{font-size:42px}
+    h2.sec-title{font-size:34px}
+    .cta h2{font-size:34px}
+    .step-grid,.cases-grid,.svc-grid{grid-template-columns:1fr}
+    .big-stat .val{font-size:80px}
+    .hero,.cta{padding:60px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#">
+      <img src="assets/logo.webp" alt="Marketing y Negocios Digitales">
+      <div class="brand-text">Marketing y<br>Negocios <span>Digitales</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#problema">El problema</a>
+      <a href="#busquedas">Búsquedas</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#casos">Casos</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn btn-primary" href="#contacto">Diagnóstico GRATIS <span class="arrow">→</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Exclusivo para Doctores y Especialistas</div>
+      <h1 class="display hero-title">
+        Que tus pacientes<br>te encuentren <em>en Google</em><br>antes que a tu competencia
+      </h1>
+      <p class="hero-sub">
+        Posicionamos tu Perfil de Empresa en Google Maps para que aparezcas
+        cuando alguien busca <b>"dermatólogo cerca de mí"</b>, <b>"pediatra en Polanco"</b>
+        o tu especialidad. Sin bots, sin pagar anuncios, sin trámites con COFEPRIS.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contacto">Agenda tu diagnóstico gratis <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/525665817161" target="_blank" rel="noopener">WhatsApp directo</a>
+      </div>
+      <div class="hero-trust">
+        <div class="item"><b>+2 años</b><span>especializados en sector salud</span></div>
+        <div class="item"><b>Solo 2</b><span>nuevos clientes por mes</span></div>
+        <div class="item"><b>50–2,000</b><span>búsquedas mensuales por especialidad</span></div>
+      </div>
+    </div>
+
+    <!-- Google profile mockup -->
+    <div class="gprofile" aria-hidden="true">
+      <div class="gp-head">
+        <div class="gp-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+          dermatólogo cerca de mí
+        </div>
+      </div>
+      <div class="gp-card">
+        <div class="gp-doctor">
+          <div class="gp-avatar">DR</div>
+          <div style="flex:1">
+            <h3 class="gp-name">Dra. R. Ramírez · Dermatología</h3>
+            <p class="gp-spec">Clínica Dermatológica · Polanco, CDMX</p>
+            <div class="gp-rating">
+              <span class="stars">★★★★★</span>
+              <b style="color:#fff">4.9</b>
+              <span style="color:#8a96b3">· 247 reseñas</span>
+            </div>
+            <div class="gp-meta">
+              <span class="chip open">● Abierto ahora</span>
+              <span class="chip">Cierra a las 19:00</span>
+              <span class="chip">A 1.2 km</span>
+            </div>
+          </div>
+        </div>
+        <div class="gp-actions">
+          <div class="gp-action primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Llamar
+          </div>
+          <div class="gp-action">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Cómo llegar
+          </div>
+          <div class="gp-action">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2.5"/></svg>
+            Reservar
+          </div>
+          <div class="gp-action">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 11 18-8-8 18-2-8-8-2Z"/></svg>
+            Web
+          </div>
+        </div>
+      </div>
+      <div class="gp-stats">
+        <div class="gp-stat">
+          <div class="lab">Vistas este mes</div>
+          <div class="val">8,420</div>
+          <div class="delta"><b>↑ 312%</b> vs hace 6 meses</div>
+        </div>
+        <div class="gp-stat alt">
+          <div class="lab">Llamadas + rutas</div>
+          <div class="val">387</div>
+          <div class="delta">pacientes potenciales</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="problem" id="problema">
+  <div class="wrap">
+    <div class="sec-eyebrow">El problema</div>
+    <h2 class="display sec-title">¿Te suena familiar alguna de <em>estas situaciones?</em></h2>
+    <div class="problem-grid">
+      <div class="problem-list">
+        <div class="p-item">
+          <div class="p-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+          <div>
+            <h4>Dependes solo de recomendaciones de boca en boca</h4>
+            <p>Un mes te llega gente, el siguiente la agenda está casi vacía. No tienes control sobre cuántos pacientes nuevos vas a recibir.</p>
+          </div>
+        </div>
+        <div class="p-item">
+          <div class="p-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg></div>
+          <div>
+            <h4>Tu consultorio no aparece cuando los pacientes te buscan</h4>
+            <p>Tecleen tu especialidad en Google y aparecen otros doctores. Ellos llegan primero, tú te quedas con lo que sobra.</p>
+          </div>
+        </div>
+        <div class="p-item">
+          <div class="p-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div>
+            <h4>Tienes perfil de Google pero está abandonado</h4>
+            <p>Sin fotos profesionales, sin reseñas recientes, con horarios viejos. Google te ignora y te muestra hasta el fondo.</p>
+          </div>
+        </div>
+        <div class="p-item">
+          <div class="p-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2C20 17.5 12 22 12 22Z"/></svg></div>
+          <div>
+            <h4>Te asusta la publicidad pagada y los trámites de COFEPRIS</h4>
+            <p>Los anuncios pagados requieren autorización. El posicionamiento orgánico, no. Existe un camino mucho más simple — y más barato.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-tabs">
+          <button class="case-tab active" data-case="dent">Dentista</button>
+          <button class="case-tab" data-case="derm">Dermatólogo</button>
+          <button class="case-tab" data-case="ped">Pediatra</button>
+          <button class="case-tab" data-case="lab">Laboratorio</button>
+        </div>
+
+        <div class="case-body" data-content="dent">
+          <p><b>Dr. González</b> tenía su consultorio dental en Guadalajara… <b>llevaba meses con la agenda a medias</b> y dependía solo de pacientes que le recomendaban familiares.</p>
+          <p>Optimizamos su perfil de Google con fotos reales, palabras clave por especialidad y un sistema de reseñas. <span class="hl">Hoy recibe entre 40 y 60 nuevos pacientes al mes</span> que lo encontraron buscando "dentista cerca de mí".</p>
+        </div>
+        <div class="case-body" data-content="derm" style="display:none">
+          <p><b>Dra. Ramírez</b>, dermatóloga en CDMX, no aparecía ni en la página 3 cuando alguien buscaba su especialidad en Polanco.</p>
+          <p>En 4 meses pasamos su perfil al <span class="hl">Top 3 del mapa local</span> con 247 reseñas reales. Hoy <span class="hl">+8,400 personas la ven cada mes</span> y recibe en promedio 387 llamadas mensuales.</p>
+        </div>
+        <div class="case-body" data-content="ped" style="display:none">
+          <p><b>Dr. Vargas</b>, pediatra en Monterrey, dependía 100% de mamás que lo recomendaban en grupos de WhatsApp.</p>
+          <p>Posicionamos su perfil para <b>"pediatra en San Pedro"</b> y <b>"vacunas niños Monterrey"</b>. <span class="hl">Llenó su agenda de los próximos 3 meses</span> y abrió un segundo consultorio.</p>
+        </div>
+        <div class="case-body" data-content="lab" style="display:none">
+          <p><b>Laboratorio Clínico Norte</b> tenía 3 sucursales sin presencia digital unificada.</p>
+          <p>Optimizamos los 3 perfiles, sincronizamos reseñas y actualizaciones. <span class="hl">Las consultas digitales subieron de 1,200 a 12,800 mensuales</span> en menos de 8 meses.</p>
+        </div>
+
+        <div class="case-foot">
+          <div><div class="lab">Antes</div><div class="val orange">~12 / mes</div></div>
+          <div><div class="lab">Después</div><div class="val">+50 / mes</div></div>
+          <div><div class="lab">Tiempo</div><div class="val">4–6 meses</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH VOLUME -->
+<section class="search" id="busquedas">
+  <div class="wrap">
+    <div class="sec-eyebrow">Búsquedas reales en Google</div>
+    <h2 class="display sec-title" style="color:#fff">Mes a mes hay <em>50 a 2,000 pacientes</em> nuevos buscando tu especialidad</h2>
+    <p class="sec-lead">Si no apareces tú, aparece otro doctor. Estas son búsquedas reales en México por especialidad — gente con problema, dispuesta a agendar consulta hoy.</p>
+
+    <div class="vol-grid">
+      <div class="vol-list">
+        <div class="vol-row">
+          <div class="vol-q">"dentista cerca de mí"<small>Búsqueda nacional</small></div>
+          <div class="vol-bar"><i style="width:100%"></i></div>
+          <div class="vol-num">2,000<small>/mes</small></div>
+        </div>
+        <div class="vol-row">
+          <div class="vol-q">"dermatólogo en CDMX"<small>Búsqueda local</small></div>
+          <div class="vol-bar"><i style="width:72%"></i></div>
+          <div class="vol-num">1,400<small>/mes</small></div>
+        </div>
+        <div class="vol-row">
+          <div class="vol-q">"pediatra cerca de mí"<small>Búsqueda local</small></div>
+          <div class="vol-bar"><i style="width:58%"></i></div>
+          <div class="vol-num">1,100<small>/mes</small></div>
+        </div>
+        <div class="vol-row">
+          <div class="vol-q">"ginecólogo en Guadalajara"<small>Búsqueda local</small></div>
+          <div class="vol-bar"><i style="width:42%"></i></div>
+          <div class="vol-num">820<small>/mes</small></div>
+        </div>
+        <div class="vol-row">
+          <div class="vol-q">"nutriólogo Monterrey"<small>Búsqueda local</small></div>
+          <div class="vol-bar"><i style="width:30%"></i></div>
+          <div class="vol-num">560<small>/mes</small></div>
+        </div>
+        <div class="vol-row">
+          <div class="vol-q">"laboratorio clínico cerca"<small>Búsqueda local</small></div>
+          <div class="vol-bar"><i style="width:18%"></i></div>
+          <div class="vol-num">340<small>/mes</small></div>
+        </div>
+      </div>
+
+      <div class="big-stat">
+        <div class="lab">Cada mes en México</div>
+        <div class="val">+50K</div>
+        <div class="desc"><b>búsquedas nuevas relacionadas con doctores y especialistas</b> que terminan eligiendo a quien aparece primero en Google Maps. Del Top 3 del mapa local sale el <b>78%</b> de las llamadas.</div>
+        <div class="foot">Datos: Google Keyword Planner · Búsquedas mensuales promedio en México 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="proceso">
+  <div class="wrap">
+    <div class="sec-eyebrow">Cómo funciona</div>
+    <h2 class="display sec-title">Un sistema de 4 pasos para <em>llenar tu agenda</em> mes a mes</h2>
+    <p class="sec-lead">Combinamos posicionamiento SEO local, gestión de reseñas y automatización con IA — pensado y probado para el sector salud.</p>
+
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Diagnóstico de tu presencia digital</h4>
+        <p>Analizamos tu perfil actual, tus competidores, las palabras clave de tu especialidad y la zona donde recibes pacientes. 60 minutos sin costo, en el horario que tú elijas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Optimización del Perfil de Empresa</h4>
+        <p>Fotos profesionales del consultorio, descripción con keywords médicas, horarios, servicios, categorías secundarias y sincronización con Google Maps.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Sistema de reseñas + automatización con IA</h4>
+        <p>Generamos un flujo para que tus pacientes satisfechos dejen reseñas reales y respondemos cada una con IA entrenada en tu tono. Esto duplica tu autoridad ante Google.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Mantenimiento y reportes mensuales</h4>
+        <p>Cada mes te mostramos cuántos te buscaron, cuántos llamaron, cuántos pidieron ruta. Ajustamos lo que haga falta. Sesión de seguimiento incluida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES STRIP -->
+<section class="cases" id="casos">
+  <div class="wrap">
+    <div class="sec-eyebrow">Resultados reales</div>
+    <h2 class="display sec-title" style="color:#fff">Doctores que ya están <em>llenando agenda</em> con Google</h2>
+    <p class="sec-lead">Casos representativos de doctores y clínicas con los que hemos trabajado. Nombres modificados por privacidad médica.</p>
+
+    <div class="cases-grid">
+      <div class="case2">
+        <div class="case2-spec">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/></svg>
+          Dentista · Guadalajara
+        </div>
+        <div class="case2-quote">
+          "Pasé de <b>12 pacientes nuevos al mes</b> a más de <b>50</b>. Lo mejor: ya no dependo de Facebook ni de pagar anuncios."
+        </div>
+        <div class="case2-foot">
+          <div><div class="lab">Antes</div><div class="val alt">12/mes</div></div>
+          <div><div class="lab">Hoy</div><div class="val">+50/mes</div></div>
+        </div>
+        <div class="case2-author">
+          <div class="case2-avatar">JG</div>
+          <div><b>Dr. J. González</b><small>Clínica Dental · Zapopan</small></div>
+        </div>
+      </div>
+
+      <div class="case2">
+        <div class="case2-spec">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/></svg>
+          Dermatóloga · CDMX
+        </div>
+        <div class="case2-quote">
+          "En 4 meses pasamos al <b>Top 3 del mapa</b> en Polanco. <b>+8,400 vistas</b> y casi 400 llamadas en un mes."
+        </div>
+        <div class="case2-foot">
+          <div><div class="lab">Vistas/mes</div><div class="val">8,400</div></div>
+          <div><div class="lab">Llamadas</div><div class="val alt">387</div></div>
+        </div>
+        <div class="case2-author">
+          <div class="case2-avatar">RR</div>
+          <div><b>Dra. R. Ramírez</b><small>Dermatología · Polanco</small></div>
+        </div>
+      </div>
+
+      <div class="case2">
+        <div class="case2-spec">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/></svg>
+          Laboratorio · Norte de México
+        </div>
+        <div class="case2-quote">
+          "Sincronizamos las <b>3 sucursales</b> y las consultas digitales subieron <b>10x</b>. Hoy abrimos una cuarta sucursal."
+        </div>
+        <div class="case2-foot">
+          <div><div class="lab">Antes</div><div class="val alt">1,200</div></div>
+          <div><div class="lab">Hoy</div><div class="val">12,800</div></div>
+        </div>
+        <div class="case2-author">
+          <div class="case2-avatar">LN</div>
+          <div><b>Lab. Clínico Norte</b><small>3 sucursales · Monterrey</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare">
+  <div class="wrap">
+    <div class="sec-eyebrow">Antes vs después</div>
+    <h2 class="display sec-title">Lo que cambia cuando <em>tu perfil está activo</em></h2>
+
+    <div class="compare-grid">
+      <div class="col bad">
+        <div class="col-tag">Sin optimización</div>
+        <h3>Tu perfil de Google ahora mismo</h3>
+        <ul>
+          <li><span class="ico x">✕</span><span>Apareces hasta la página 3 (o no apareces).</span></li>
+          <li><span class="ico x">✕</span><span>Tienes 5–10 reseñas viejas, sin respuestas.</span></li>
+          <li><span class="ico x">✕</span><span>Sin fotos del consultorio o con fotos genéricas.</span></li>
+          <li><span class="ico x">✕</span><span>Pacientes nuevos solo por recomendación de boca en boca.</span></li>
+          <li><span class="ico x">✕</span><span>No sabes cuántas personas te buscaron este mes.</span></li>
+          <li><span class="ico x">✕</span><span>Tu competencia se queda con las llamadas que deberían ser tuyas.</span></li>
+        </ul>
+      </div>
+
+      <div class="col good">
+        <div class="col-tag">Con nuestro sistema</div>
+        <h3>Tu perfil en 4–6 meses</h3>
+        <ul>
+          <li><span class="ico v">✓</span><span>Top 3 en el mapa local de Google para tu especialidad y ciudad.</span></li>
+          <li><span class="ico v">✓</span><span>+200 reseñas reales de pacientes satisfechos, todas respondidas.</span></li>
+          <li><span class="ico v">✓</span><span>Galería profesional: consultorio, equipo, antes/después.</span></li>
+          <li><span class="ico v">✓</span><span>40 a 60 pacientes nuevos al mes, llegan solos por Google.</span></li>
+          <li><span class="ico v">✓</span><span>Reporte mensual: vistas, llamadas, rutas, conversiones.</span></li>
+          <li><span class="ico v">✓</span><span>Te conviertes en el referente de tu especialidad en tu zona.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY UPDATE MONTHLY -->
+<section class="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <div class="sec-eyebrow">Por qué cada mes importa</div>
+        <h2 class="display sec-title">Google premia a los <em>perfiles activos</em></h2>
+        <p class="sec-lead" style="margin-bottom:0">El algoritmo de Google revisa la actividad del perfil cada semana. Si dejas de publicar, dejas de aparecer.</p>
+        <div class="why-list">
+          <div class="row">
+            <div class="num">1</div>
+            <div>
+              <h5>Posts semanales con palabras clave</h5>
+              <p>Cada publicación le dice a Google que estás activo y qué servicios ofreces.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="num">2</div>
+            <div>
+              <h5>Reseñas nuevas cada mes</h5>
+              <p>Las reseñas recientes pesan más que las viejas. Sin reseñas nuevas, bajas en el ranking.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="num">3</div>
+            <div>
+              <h5>Fotos actualizadas del consultorio</h5>
+              <p>Pacientes confían en lo que ven. Fotos reales del equipo y de pacientes (con permiso) duplican la conversión.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="num">4</div>
+            <div>
+              <h5>Respuestas rápidas a mensajes</h5>
+              <p>Google mide el tiempo de respuesta. Con IA respondemos en minutos, 24/7, en tu tono.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calendar">
+        <div class="cal-head">
+          <h4>Actividad del perfil — Mayo 2026</h4>
+          <div class="pill">● 28 acciones</div>
+        </div>
+        <div class="cal-grid">
+          <div class="cal-day dim">L</div><div class="cal-day dim">M</div><div class="cal-day dim">M</div><div class="cal-day dim">J</div><div class="cal-day dim">V</div><div class="cal-day dim">S</div><div class="cal-day dim">D</div>
+          <div class="cal-day dim">27</div><div class="cal-day dim">28</div><div class="cal-day dim">29</div><div class="cal-day dim">30</div><div class="cal-day has">1</div><div class="cal-day">2</div><div class="cal-day">3</div>
+          <div class="cal-day has">4</div><div class="cal-day">5</div><div class="cal-day has">6</div><div class="cal-day has">7</div><div class="cal-day">8</div><div class="cal-day has">9</div><div class="cal-day">10</div>
+          <div class="cal-day has">11</div><div class="cal-day has">12</div><div class="cal-day">13</div><div class="cal-day has">14</div><div class="cal-day has">15</div><div class="cal-day">16</div><div class="cal-day has">17</div>
+          <div class="cal-day">18</div><div class="cal-day has">19</div><div class="cal-day has">20</div><div class="cal-day has">21</div><div class="cal-day active has">22</div><div class="cal-day">23</div><div class="cal-day">24</div>
+          <div class="cal-day">25</div><div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day dim">30</div><div class="cal-day dim">31</div>
+        </div>
+        <div class="cal-foot">
+          <div class="cal-stat">
+            <div class="lab">Posts publicados</div>
+            <div class="val">12</div>
+          </div>
+          <div class="cal-stat">
+            <div class="lab">Reseñas respondidas</div>
+            <div class="val">16</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="wrap">
+    <div class="sec-eyebrow">Qué incluye</div>
+    <h2 class="display sec-title" style="color:#fff">Todo lo que necesitas para <em>posicionarte</em> en tu zona</h2>
+    <p class="sec-lead">Un servicio integral pensado para doctores. No tienes que hacer nada técnico — nosotros nos encargamos.</p>
+
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h4>Auditoría SEO local de tu especialidad</h4>
+        <p>Detectamos qué palabras clave usan tus pacientes y cómo está posicionada tu competencia en tu zona.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Optimización del Perfil de Empresa</h4>
+        <p>Categorías, descripción, servicios, horarios, fotos profesionales y palabras clave médicas integradas.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg></div>
+        <h4>Sistema de generación de reseñas reales</h4>
+        <p>Flujo automatizado para que tus pacientes satisfechos dejen su reseña en Google. Reales, sin trampa.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h4>Publicaciones semanales con IA</h4>
+        <p>Contenido médico relevante, optimizado para búsquedas. Tú apruebas, nosotros publicamos cada semana.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h4>Respuesta automática a reseñas y mensajes</h4>
+        <p>IA entrenada en tu tono profesional. Responde reseñas y consultas en minutos, 24/7. Tú revisas y autorizas.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <h4>Reportes mensuales + sesión 1 a 1</h4>
+        <p>60 minutos cada mes para revisar métricas, llamadas, búsquedas nuevas y ajustar la estrategia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="wrap">
+    <div class="sec-eyebrow">Por qué elegirnos</div>
+    <h2 class="display sec-title">Especialistas en <em>sector salud</em></h2>
+
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="icon-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2C20 17.5 12 22 12 22Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Sin trámites con COFEPRIS</h3>
+        <p>COFEPRIS solo regula la <b>publicidad pagada</b> (anuncios en redes sociales o Google Ads). El posicionamiento orgánico — aparecer cuando alguien te busca en Google Maps — <b>no requiere autorización</b>.</p>
+        <p>Para tus pacientes apareces tú o tu clínica de forma natural en sus búsquedas. Para la autoridad pasas desapercibido: las métricas de tu perfil son datos privados que solo tú ves.</p>
+        <span class="badge">● 100% legal y orgánico</span>
+      </div>
+
+      <div class="trust-card">
+        <div class="icon-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Solo 2 clientes nuevos por mes</h3>
+        <p>Trabajamos exclusivamente con doctores y clínicas de alto perfil. <b>Solo aceptamos 2 nuevos clientes cada mes</b> para garantizar atención personalizada y revisar mes a mes cada métrica.</p>
+        <p>Tu sesión mensual de 60 minutos es contigo, no con un becario. Comunicación directa por WhatsApp para dudas urgentes.</p>
+        <span class="badge" style="background:rgba(255,106,19,.12);color:var(--orange)">● +2 años en sector médico</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-eyebrow">Preguntas frecuentes</div>
+    <h2 class="display sec-title">Lo que otros doctores nos <em>han preguntado</em></h2>
+
+    <div class="faq-grid" style="margin-top:50px">
+      <details class="q" open>
+        <summary>¿Necesito autorización de COFEPRIS para esto?</summary>
+        <p>No. COFEPRIS regula la publicidad pagada (anuncios en Facebook, Instagram, Google Ads). El posicionamiento orgánico — aparecer cuando alguien busca tu especialidad — son búsquedas que millones hacen todos los días y no caen bajo regulación publicitaria.</p>
+      </details>
+      <details class="q">
+        <summary>¿En cuánto tiempo veo resultados?</summary>
+        <p>Las primeras vistas y llamadas nuevas suelen llegar entre el mes 1 y 2. El Top 3 del mapa local se logra entre el mes 4 y 6 dependiendo de tu zona y competencia.</p>
+      </details>
+      <details class="q">
+        <summary>¿Tengo que hacer algo técnico?</summary>
+        <p>No. Tú nos das acceso al perfil (te explicamos cómo) y nosotros operamos todo. Solo apruebas el contenido y tomamos una sesión mensual de 60 minutos para revisar resultados.</p>
+      </details>
+      <details class="q">
+        <summary>¿Las reseñas son reales?</summary>
+        <p>Sí. Generamos un flujo (QR, mensaje post-consulta, link directo) para que tus pacientes satisfechos dejen reseña fácilmente. Google detecta y elimina reseñas falsas — nosotros nunca las usamos.</p>
+      </details>
+      <details class="q">
+        <summary>¿Atienden a doctores de cualquier especialidad?</summary>
+        <p>Trabajamos con todas las especialidades: dermatología, pediatría, ginecología, odontología, nutrición, ortopedia, psicología, laboratorios y más. Cada plan se ajusta a las palabras clave y zona específica de tu especialidad.</p>
+      </details>
+      <details class="q">
+        <summary>¿Por qué solo 2 clientes nuevos al mes?</summary>
+        <p>Para garantizar la calidad. Cada cliente tiene una sesión mensual de 60 minutos, comunicación directa con nuestro equipo y un análisis personalizado de sus métricas. Más clientes = menos atención personal — y eso no negociamos.</p>
+      </details>
+      <details class="q">
+        <summary>¿Qué pasa si ya tengo perfil de Google?</summary>
+        <p>Mejor. Lo auditamos, recuperamos lo que esté abandonado, optimizamos categorías y descripción, y arrancamos con base previa. La mayoría de doctores ya tienen perfil pero nadie lo trabaja.</p>
+      </details>
+      <details class="q">
+        <summary>¿Cuánto cuesta?</summary>
+        <p>Depende de tu especialidad, ciudad y nivel de competencia. Lo cotizamos en la sesión de diagnóstico gratuita de 60 minutos, donde ya te llevas un análisis útil — independientemente de si trabajas con nosotros o no.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contacto">
+  <div class="wrap cta-grid">
+    <div>
+      <h2 class="display">¿Listo para que <em>Google te traiga</em> los pacientes?</h2>
+      <p class="lead">Agenda tu sesión gratis de 60 minutos. Recibes un análisis de tu perfil, las palabras clave de tu especialidad y un plan inicial — sin compromiso.</p>
+      <ul class="cta-bullets">
+        <li><span class="ico v">✓</span>Diagnóstico personalizado de tu zona y competencia</li>
+        <li><span class="ico v">✓</span>Análisis de palabras clave de tu especialidad</li>
+        <li><span class="ico v">✓</span>Plan inicial con metas claras a 3 y 6 meses</li>
+        <li><span class="ico v">✓</span>Sin compromiso ni tarjeta de crédito</li>
+      </ul>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <a class="btn btn-wa" href="https://wa.me/525665817161" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.6.1-.7.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9s0-.4.1-.5l.4-.5.3-.4.1-.5-.1-.4c0-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4s-.9.9-.9 2.2.9 2.6 1.1 2.8c.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+          WhatsApp directo: 5665817161
+        </a>
+        <span style="color:#bcc5d9;font-size:14px">Solo 2 lugares disponibles este mes</span>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-head">
+        <div class="wa-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.6.1-.7.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9s0-.4.1-.5l.4-.5.3-.4.1-.5-.1-.4c0-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4s-.9.9-.9 2.2.9 2.6 1.1 2.8c.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+        </div>
+        <div>
+          <h3>Agenda tu diagnóstico</h3>
+          <small>Te respondemos en menos de 1 hora</small>
+        </div>
+      </div>
+      <p class="intro">👋 Para poder ayudarte mejor, compártenos esta información:</p>
+      <form id="leadForm" onsubmit="return enviarWA(event)">
+        <label for="nombre">🧑‍⚕️ ¿Cuál es tu nombre?</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Dr. / Dra. ..." required>
+
+        <label for="rol">🏥 ¿Cuál es tu posición?</label>
+        <select id="rol" name="rol">
+          <option>Doctor / Doctora</option>
+          <option>Administrador / Dueño de clínica</option>
+          <option>Atención a pacientes</option>
+          <option>Enfermera / Enfermero</option>
+          <option>Otro</option>
+        </select>
+
+        <label for="especialidad">🩺 ¿Cuál es tu especialidad?</label>
+        <input id="especialidad" name="especialidad" type="text" placeholder="Ej. Dermatología, Pediatría, Odontología...">
+
+        <label for="ciudad">📍 ¿Dónde está tu consultorio?</label>
+        <input id="ciudad" name="ciudad" type="text" placeholder="Ciudad y colonia" required>
+
+        <button class="submit" type="submit">
+          Enviar por WhatsApp
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.6.1-.7.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9s0-.4.1-.5l.4-.5.3-.4.1-.5-.1-.4c0-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4s-.9.9-.9 2.2.9 2.6 1.1 2.8c.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+        </button>
+        <p class="legal">No compartimos tu información. Respuesta en menos de 1 hora hábil.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.webp" alt="">
+          <div class="t">Marketing y<br>Negocios <span>Digitales</span></div>
+        </div>
+        <p style="max-width:380px;font-size:14px;line-height:1.6">Atraemos pacientes reales a tu consultorio con Google y páginas web que venden. Sin bots. Sin publicidad cara.</p>
+      </div>
+      <div>
+        <h5>Servicios</h5>
+        <a href="#proceso">Posicionamiento Google Local</a>
+        <a href="#proceso">Gestión de reseñas</a>
+        <a href="#proceso">Páginas web médicas</a>
+        <a href="#proceso">Automatización con IA</a>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <a href="https://wa.me/525665817161" target="_blank" rel="noopener">WhatsApp: 5665 817 161</a>
+        <a href="#contacto">Agendar diagnóstico</a>
+        <a href="https://marketingynegociosdigitales.com" target="_blank" rel="noopener">marketingynegociosdigitales.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Marketing y Negocios Digitales · Todos los derechos reservados</span>
+      <span>Hecho para doctores que quieren llenar su agenda</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/525665817161" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.6.1-.7.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9s0-.4.1-.5l.4-.5.3-.4.1-.5-.1-.4c0-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4s-.9.9-.9 2.2.9 2.6 1.1 2.8c.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+</a>
+
+<script>
+  // case tabs
+  const tabs = document.querySelectorAll('.case-tab');
+  const bodies = document.querySelectorAll('.case-body');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    const k = t.dataset.case;
+    bodies.forEach(b => b.style.display = b.dataset.content === k ? 'block' : 'none');
+  }));
+
+  // submit form -> whatsapp
+  function enviarWA(e){
+    e.preventDefault();
+    const f = e.target;
+    const nombre = f.nombre.value || '';
+    const rol = f.rol.value || '';
+    const esp = f.especialidad.value || '';
+    const ciudad = f.ciudad.value || '';
+    const msg = encodeURIComponent(
+      `Hola, vi su página y quiero agendar un diagnóstico gratis.\n\n` +
+      `Nombre: ${nombre}\n` +
+      `Posición: ${rol}\n` +
+      `Especialidad: ${esp}\n` +
+      `Ciudad / Consultorio: ${ciudad}`
+    );
+    window.open(`https://wa.me/525665817161?text=${msg}`, '_blank');
+    return false;
+  }
+</script>
+
+</body>
+</html>
