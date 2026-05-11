@@ -1,0 +1,23 @@
+# Robots.txt para Marketing y Negocios Digitales
+# Última actualización: 2026-05-11
+
+User-agent: *
+Allow: /
+Allow: /doctores
+Allow: /pizzerias
+Allow: /restaurantes
+Allow: /abogados
+Allow: /negocios-locales
+
+# Disallow private or unnecessary directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /.git/
+Disallow: /.env
+
+# Crawl delay (optional, adjust if needed)
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://marketingynegociosdigitales.com/sitemap.xml
