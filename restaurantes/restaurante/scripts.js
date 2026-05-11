@@ -112,7 +112,7 @@ if (form) {
     const nombre = fd.get('nombre') || '';
     const puesto = fd.get('puesto') || '';
     const ciudad = fd.get('ciudad') || '';
-    const msg = `Hola, soy ${nombre} (${puesto}) de ${ciudad}. Me interesa generar más clientes para mi pizzería con Google.`;
+    const msg = `Hola, soy ${nombre} (${puesto}) de ${ciudad}. Me interesa generar más clientes para mi restaurante con Google.`;
     const url = `https://wa.me/525665817161?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   });
