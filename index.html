@@ -444,6 +444,11 @@ h1.mega .ln{display:block;white-space:nowrap}
 .rl-note{font-size:12px;color:var(--muted);margin-top:10px}
 .deal{position:fixed;right:18px;top:calc(50% + 44px);z-index:89;width:min(230px,calc(100vw - 36px));background:var(--ink);color:#fff;border-radius:18px;padding:12px 14px 12px;box-shadow:0 0 0 2px var(--lime),0 18px 34px -12px rgba(13,13,22,.6);transform-origin:top right;animation:dealIn .8s var(--ease) both}
 .deal[hidden]{display:none}
+.wa-wrap,.deal{touch-action:none;-webkit-user-select:none;user-select:none;cursor:grab}
+.wa-wrap.moved,.deal.moved{transform:none!important;animation:none!important}
+.wa-wrap.dragging,.deal.dragging{cursor:grabbing}
+.wa-wrap.dragging .wa-bubble{animation:none}
+.wa-wrap a,.deal a{-webkit-user-drag:none}
 @keyframes dealIn{from{opacity:0;transform:translateY(-14px) scale(.7) rotate(4deg)}}
 .deal a{display:block}
 .deal-tag{display:block;font-size:10px;font-weight:800;letter-spacing:.1em;color:var(--lime);margin-bottom:5px}
@@ -992,6 +997,46 @@ const reduce=false; /* animaciones siempre activas, aunque el sistema tenga "red
     if(parts.length)cr=requestAnimationFrame(cloop);else cx.clearRect(0,0,cc.width,cc.height);
   }
 })();
+
+/* widgets flotantes arrastrables (WhatsApp + descuento guardado) */
+function makeDraggable(el,key){
+  let down=false,moved=false,sx=0,sy=0,startR=0,startT=0,w=0,h=0;
+  const clamp=(v,a,b)=>Math.min(Math.max(v,a),Math.max(a,b));
+  function place(right,top){
+    const r=el.getBoundingClientRect();w=r.width;h=r.height;
+    el.classList.add('moved');
+    el.style.left='auto';el.style.bottom='auto';
+    el.style.right=clamp(right,4,innerWidth-w-4)+'px';
+    el.style.top=clamp(top,4,innerHeight-h-4)+'px';
+  }
+  el.addEventListener('pointerdown',e=>{
+    if(e.target.closest('.x,.deal-x')||(e.pointerType==='mouse'&&e.button!==0))return;
+    const r=el.getBoundingClientRect();
+    down=true;moved=false;sx=e.clientX;sy=e.clientY;
+    startR=innerWidth-r.right;startT=r.top;w=r.width;h=r.height;
+  });
+  addEventListener('pointermove',e=>{
+    if(!down)return;
+    const dx=e.clientX-sx,dy=e.clientY-sy;
+    if(!moved){if(Math.hypot(dx,dy)<7)return;moved=true;el.classList.add('dragging')}
+    e.preventDefault();
+    place(startR-dx,startT+dy);
+  },{passive:false});
+  function end(){
+    if(!down)return;down=false;el.classList.remove('dragging');
+    if(moved){
+      el.dataset.drag='1';setTimeout(()=>{delete el.dataset.drag},50);
+      try{localStorage.setItem(key,JSON.stringify({r:parseFloat(el.style.right),t:parseFloat(el.style.top)}))}catch(e){}
+    }
+  }
+  addEventListener('pointerup',end);addEventListener('pointercancel',end);
+  el.addEventListener('click',e=>{if(el.dataset.drag){e.preventDefault();e.stopPropagation()}},true);
+  /* restaurar posición guardada */
+  try{const p=JSON.parse(localStorage.getItem(key)||'null');if(p)requestAnimationFrame(()=>place(p.r,p.t))}catch(e){}
+  addEventListener('resize',()=>{if(el.classList.contains('moved'))place(parseFloat(el.style.right),parseFloat(el.style.top))});
+}
+makeDraggable($('#waWrap'),'mnd_pos_wa');
+makeDraggable($('#deal'),'mnd_pos_deal');
 
 /* whatsapp bubble */
 const waW=document.getElementById('waWrap');
