@@ -940,7 +940,7 @@ const reduce=false; /* animaciones siempre activas, aunque el sistema tenga "red
   function stop(){if(state==='spin'){state='brake';t0=performance.now();a0=ang;$('#rlHub').textContent='...';clearTimeout(fin);fin=setTimeout(()=>{if(state==='brake'){ang=a0+V*D/2;state='done';cv.style.transform=`rotate(${ang}rad)`;finish()}},D+300)}}
   function finish(){
     const a=((-Math.PI/2-ang)%(Math.PI*2)+Math.PI*2)%(Math.PI*2);
-    const o=OPT[Math.floor(a/SEG)%N],pct=1+Math.floor(Math.random()*7);
+    const o=OPT[Math.floor(a/SEG)%N],pct=10+Math.floor(Math.random()*6); /* descuento entre 10% y 15% */
     $('#rlPct').textContent=pct+'%';
     $('#rlMsg').innerHTML=`¡Felicidades! Tienes un <b>${pct}% de descuento</b> en ${o.t}.`;
     cur={pct,t:o.t};
