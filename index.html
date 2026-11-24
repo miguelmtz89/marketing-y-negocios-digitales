@@ -182,6 +182,10 @@ h1.mega .ln{display:block;white-space:nowrap}
 .marq span::after{content:"✺";color:var(--orange);font-size:.7em}
 .marq span:nth-child(even){font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.7rem)}
 @keyframes mq{to{transform:translateX(-50%)}}
+.logos{overflow:hidden;white-space:nowrap;margin-top:50px;padding:26px 0;border-block:1px solid var(--line);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.logos:empty{display:none}
+.logos .tr{display:inline-flex;align-items:center;gap:70px;padding-right:70px;animation:mq 30s linear infinite}
+.logos img{height:clamp(34px,4.5vw,56px);width:auto;max-width:170px;object-fit:contain}
 
 /* ---------- STATS ---------- */
 .stats{padding:clamp(60px,9vw,120px) 0}
@@ -523,7 +527,7 @@ h1.mega .ln{display:block;white-space:nowrap}
 <header class="nav" id="nav">
   <a href="#top" class="logo"><i></i>Marketing &amp; Negocios Digitales</a>
   <ul>
-    <li><a href="#solucion">Servicios</a></li>
+    <li><a href="/clientes-en-google">Servicios</a></li>
     <li><a href="#resultados">Resultados</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#faq">FAQ</a></li>
@@ -626,75 +630,19 @@ h1.mega .ln{display:block;white-space:nowrap}
   </div>
 </section>
 
-<!-- SOLUCIÓN -->
-<section class="solution" id="solucion" style="background:var(--ink);padding-top:0">
-  <div style="background:var(--cream);border-radius:36px 36px 0 0;padding:clamp(80px,11vw,160px) 0 20px">
+<!-- SOLUCIÓN (link a página aparte) -->
+<section class="solution" id="solucion" style="padding:clamp(70px,9vw,120px) 0">
   <div class="wrap">
-    <div class="sol-head rv">
-      <span class="eyebrow"><i class="dot"></i>La solución</span>
-      <h2 class="h2">Dos formas de empezar<br><span class="serif">a generar clientes hoy</span></h2>
+    <div class="sol-head rv" style="margin-bottom:0">
+      <a href="/clientes-en-google" style="display:inline-block">
+        <h2 class="h2">Dos formas de empezar<br><span class="serif">a generar clientes hoy</span> →</h2>
+      </a>
     </div>
-    <div class="stack">
-      <article class="pkg a">
-        <div class="left">
-          <div>
-            <span class="tag">GOOGLE SEO LOCAL</span>
-            <h3>Atrae clientes todos los meses con Google</h3>
-            <p class="desc">Aparece cuando alguien busca tu negocio en tu ciudad. Sin publicidad. Sin bots. Solo clientes reales que ya quieren comprar.</p>
-          </div>
-          <div>
-            <div class="price"><span class="o">$8,500</span><span class="n">$6,500</span><span class="p">/mes</span></div>
-            <a href="https://buy.stripe.com/00w6oI1CL7MCg4H4787kc09" class="btn">Quiero aparecer en Google <span class="ar"><span>→</span><span>→</span></span></a>
-          </div>
-        </div>
-        <ul>
-          <li>Optimización de perfil de Google Business</li>
-          <li>Posicionamiento local en búsquedas</li>
-          <li>Estrategia de palabras clave de tu giro</li>
-          <li>Gestión de reseñas y reputación</li>
-          <li>Asesoría mensual de estrategia</li>
-          <li>Acciones probadas para atraer tu cliente ideal</li>
-          <li>Reportes mensuales en lenguaje simple</li>
-          <li>Página web informativa para mostrar servicios, sin revisar la ruta del cliente</li>
-        </ul>
-        <span class="big">01</span>
-      </article>
-
-      <article class="pkg b">
-        <div class="left">
-          <div>
-            <span class="tag">PÁGINA WEB</span>
-            <h3>Tu página web que convierte visitas en clientes</h3>
-            <p class="desc">No cualquier página. Una máquina de convertir visitas en clientes, optimizada para Google y diseñada para vender.</p>
-          </div>
-          <div>
-            <div class="price"><span class="o">$16,000</span><span class="n">$12,500</span><span class="p">pago único</span></div>
-            <a href="https://buy.stripe.com/14AeVe5T1c2SbOrbzA7kc0a" class="btn lime">Quiero mi página web <span class="ar"><span>→</span><span>→</span></span></a>
-          </div>
-        </div>
-        <ul>
-          <li>Fotos profesionales del negocio y productos</li>
-          <li>Diseño atractivo y moderno</li>
-          <li>Copywriting persuasivo (textos que venden)</li>
-          <li>Botón directo a WhatsApp integrado</li>
-          <li>SEO básico (meta tags + schema.org)</li>
-          <li>Integración con Google Maps</li>
-          <li>Formulario de contacto automatizado</li>
-          <li>Velocidad optimizada (Core Web Vitals)</li>
-          <li>Diseño responsive (celular primero)</li>
-          <li>Landing para promociones y combos</li>
-          <li>Animación en Página Web</li>
-          <li>Revisamos la Ruta del Cliente antes de Comprar</li>
-        </ul>
-        <span class="big">02</span>
-      </article>
-    </div>
-  </div>
   </div>
 </section>
 
 <!-- RESULTADOS -->
-<section class="results" id="resultados" style="margin-top:-36px;position:relative">
+<section class="results" id="resultados">
   <div class="wrap">
     <div class="res-head">
       <div class="rv">
@@ -713,6 +661,7 @@ h1.mega .ln{display:block;white-space:nowrap}
       <article class="test rv" style="--d:.1s"><div><div class="stars-r">★★★★★</div><q>"Mi restaurante estaba medio vacío entre semana. Ahora tengo lista de espera los jueves y viernes. El SEO local funciona de verdad."</q></div><div class="who"><span class="av">MT</span><div><b>María T.</b><small>Restaurante La Hacienda, Guadalajara</small></div></div></article>
       <article class="test rv" style="--d:.2s"><div><div class="stars-r">★★★★★</div><q>"Como abogado nunca creí en el marketing digital. Hoy el 60% de mis nuevos clientes me encuentran en Google. Inversión que vale la pena."</q></div><div class="who"><span class="av">FA</span><div><b>Lic. Fernández</b><small>Despacho Fernández &amp; Asociados, Monterrey</small></div></div></article>
     </div>
+    <div class="logos" id="logos" aria-label="Negocios que confían en nosotros"></div>
   </div>
 </section>
 
@@ -750,21 +699,14 @@ h1.mega .ln{display:block;white-space:nowrap}
   </div>
 </section>
 
-<!-- POR TIPO DE NEGOCIO -->
-<section class="biz" id="negocios">
+<!-- POR TIPO DE NEGOCIO (link a página aparte) -->
+<section class="biz" id="negocios" style="padding:clamp(70px,9vw,120px) 0">
   <div class="wrap">
-    <div class="biz-head rv">
-      <span class="eyebrow"><i class="dot"></i>Por tipo de negocio</span>
-      <h2 class="h2">¿Cuántos clientes potenciales <span class="serif">hay en Google para ti?</span></h2>
+    <div class="biz-head rv" style="margin-bottom:0;text-align:center">
+      <a href="/cuantos-clientes-en-redes-sociales" style="display:inline-block">
+        <h2 class="h2">¿Cuántos clientes potenciales <span class="serif">hay en Google para ti?</span> →</h2>
+      </a>
     </div>
-    <div class="tabs" id="tabs" role="tablist">
-      <button class="tab on" data-k="pizza">🍕 Pizzería</button>
-      <button class="tab" data-k="resto">🍽 Restaurante</button>
-      <button class="tab" data-k="abog">⚖️ Abogado</button>
-      <button class="tab" data-k="doc">🏥 Doctor</button>
-      <button class="tab" data-k="local">🛒 Negocio local</button>
-    </div>
-    <div class="biz-panel" id="panel"></div>
   </div>
 </section>
 
@@ -816,32 +758,16 @@ h1.mega .ln{display:block;white-space:nowrap}
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="final">
-  <div class="wrap">
-    <span class="warn">⚠️ Cada día sin Google es dinero que pierdes</span>
-    <span class="say serif">Listo cuando tú lo estés</span>
-    <div class="giant" id="giant">Tu negocio<br><span class="orange">en Google</span></div>
-    <p class="sub">Si sigues sin aparecer en internet, estás <b>perdiendo clientes todos los días</b>. El momento de actuar es ahora. Hay personas buscando exactamente lo que ofreces.</p>
-    <div class="final-ctas">
-      <a href="https://wa.me/525665817161?text=Hola,%20%C2%BFCu%C3%A1ntos%20clientes%20puedo%20atraer%20en%20Google?" class="btn wa">💬 Escribir por WhatsApp <span class="ar"><span>→</span><span>→</span></span></a>
-      <a href="tel:+525665817161" class="btn">📞 Agendar llamada gratuita <span class="ar"><span>→</span><span>→</span></span></a>
-      <a href="#diagnostico" class="btn ghost">🔍 Diagnóstico GRATIS</a>
-    </div>
-    <div class="checks"><span>Sin contratos de permanencia</span><span>Resultados medibles</span><span>Sin conocimientos técnicos</span><span>Garantía de resultados</span></div>
-  </div>
-</section>
-
 <!-- SERVICIOS ESPECIALIZADOS + FOOTER -->
 <footer class="verts">
   <div class="wrap">
     <h2 class="rv">Nuestros Servicios <span class="serif" style="color:var(--orange)">Especializados</span></h2>
     <div class="vgrid">
-      <a class="v rv" href="#negocios" data-go="abog"><div><h3>⚖️ Para Abogados</h3><p>Soluciones web y marketing especializado para despachos de abogados. Posicionamiento en Google y captación de clientes.</p></div><span class="more">Ver Más</span></a>
-      <a class="v rv" href="#negocios" data-go="doc" style="--d:.06s"><div><h3>🏥 Para Doctores</h3><p>Páginas web profesionales para consultorios médicos. Sistema de agendamiento online y gestión de pacientes.</p></div><span class="more">Ver Más</span></a>
-      <a class="v rv" href="#negocios" data-go="resto" style="--d:.12s"><div><h3>🍽️ Para Restaurantes</h3><p>Menú digital interactivo, sistema de reservas online y estrategia de marketing gastronómico integrada.</p></div><span class="more">Ver Más</span></a>
-      <a class="v rv" href="#negocios" data-go="pizza" style="--d:.18s"><div><h3>🍕 Para Pizzerías</h3><p>Sistema de pedidos online, integración con plataformas de delivery y promociones automáticas.</p></div><span class="more">Ver Más</span></a>
-      <a class="v rv" href="#negocios" data-go="local" style="--d:.24s"><div><h3>🏪 Negocios Locales</h3><p>Soluciones integrales de marketing digital para cualquier tipo de negocio local. Posicionamiento, visibilidad y captación de clientes.</p></div><span class="more">Ver Más</span></a>
+      <a class="v rv" href="/cuantos-clientes-en-redes-sociales#abog"><div><h3>⚖️ Para Abogados</h3><p>Soluciones web y marketing especializado para despachos de abogados. Posicionamiento en Google y captación de clientes.</p></div><span class="more">Ver Más</span></a>
+      <a class="v rv" href="/cuantos-clientes-en-redes-sociales#doc" style="--d:.06s"><div><h3>🏥 Para Doctores</h3><p>Páginas web profesionales para consultorios médicos. Sistema de agendamiento online y gestión de pacientes.</p></div><span class="more">Ver Más</span></a>
+      <a class="v rv" href="/cuantos-clientes-en-redes-sociales#resto" style="--d:.12s"><div><h3>🍽️ Para Restaurantes</h3><p>Menú digital interactivo, sistema de reservas online y estrategia de marketing gastronómico integrada.</p></div><span class="more">Ver Más</span></a>
+      <a class="v rv" href="/cuantos-clientes-en-redes-sociales#pizza" style="--d:.18s"><div><h3>🍕 Para Pizzerías</h3><p>Sistema de pedidos online, integración con plataformas de delivery y promociones automáticas.</p></div><span class="more">Ver Más</span></a>
+      <a class="v rv" href="/cuantos-clientes-en-redes-sociales#local" style="--d:.24s"><div><h3>🏪 Negocios Locales</h3><p>Soluciones integrales de marketing digital para cualquier tipo de negocio local. Posicionamiento, visibilidad y captación de clientes.</p></div><span class="more">Ver Más</span></a>
     </div>
     <div class="soc rv" aria-label="Redes oficiales">
       <span class="soc-l">Síguenos</span>
@@ -1055,6 +981,10 @@ setTimeout(()=>document.body.classList.add('loaded'),1200);
 const words=['SEO Local','Google Business','Páginas web que venden','Clientes reales','Sin bots','Posicionamiento orgánico','Reseñas','WhatsApp directo'];
 $('#mq').innerHTML=[...words,...words].map(w=>`<span>${w}</span>`).join('');
 
+/* logos (agrega nombres de archivo de la carpeta /logos) */
+const logos=['abogados-logitpos.webp','cox-optica.webp','garcias-pizzas-logotipo.webp','iudej-universidad.webp','logo-hamburguesas-maliburguers.webp','logotipo-constructora.webp','logotipo-laboratorio-santa-fe.webp','vidrieria-logotipo.webp'];
+if(logos.length){const t=[...logos,...logos].map(f=>`<img src="logos/${f}" alt="" loading="lazy">`).join('');$('#logos').innerHTML=`<div class="tr">${t}</div>`}
+
 /* nav states */
 const nav=$('#nav');
 const darkEls=$$('.dark,.verts,.box.offer');
@@ -1137,29 +1067,7 @@ function procUpdate(){
   }
 }
 
-/* business tabs */
-const BIZ={
- pizza:{h:'Tu pizzería en el top de Google, generando pedidos a diario',p:'En tu ciudad hay cientos de personas buscando "pizza a domicilio cerca de mí" cada día. Asegúrate de que te encuentren a ti primero.',s:[['800+','búsquedas/mes promedio'],['3X','más pedidos online'],['45 días','para ver resultados'],['100%','clientes reales']],q:'Pizzería cerca de mí',n:'Tu Pizzería · ⭐ 4.9 (127 reseñas)',d:'Abierto ahora · A 0.3 km · WhatsApp disponible',f:'800+ búsquedas/mes esperando encontrarte',cta:'Quiero estos clientes'},
- resto:{h:'Para Restaurantes',p:'Menú digital interactivo, sistema de reservas online y estrategia de marketing gastronómico integrada.',q:'Restaurante cerca de mí',n:'Tu Restaurante · ⭐ 4.9',d:'Abierto ahora · Reservas online · WhatsApp disponible',f:'Personas buscando dónde comer, esperando encontrarte',cta:'Quiero estos clientes'},
- abog:{h:'Para Abogados',p:'Soluciones web y marketing especializado para despachos de abogados. Posicionamiento en Google y captación de clientes.',q:'Abogado cerca de mí',n:'Tu Despacho · ⭐ 4.9',d:'Consulta disponible · WhatsApp disponible',f:'Clientes buscando un abogado, esperando encontrarte',cta:'Quiero estos clientes'},
- doc:{h:'Para Doctores',p:'Páginas web profesionales para consultorios médicos. Sistema de agendamiento online y gestión de pacientes.',q:'Doctor cerca de mí',n:'Tu Consultorio · ⭐ 4.9',d:'Agenda tu cita online · WhatsApp disponible',f:'Pacientes buscando un doctor, esperando encontrarte',cta:'Quiero estos clientes'},
- local:{h:'Negocios Locales',p:'Soluciones integrales de marketing digital para cualquier tipo de negocio local. Posicionamiento, visibilidad y captación de clientes.',q:'Negocio cerca de mí',n:'Tu Negocio · ⭐ 4.9',d:'Abierto ahora · WhatsApp disponible',f:'Clientes buscando lo que ofreces, esperando encontrarte',cta:'Quiero estos clientes'}
-};
-const panel=$('#panel');
-function showBiz(k){
-  const b=BIZ[k];
-  $$('.tab').forEach(t=>t.classList.toggle('on',t.dataset.k===k));
-  const stats=b.s?`<div class="bp-stats">${b.s.map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div>`:'';
-  panel.innerHTML=`<div class="bp-l fade"><div><h3>${b.h}</h3><p>${b.p}</p></div><div>${stats}<div style="margin-top:${b.s?20:0}px"><a class="btn" href="https://wa.me/525665817161?text=${encodeURIComponent('Hola, quiero más clientes para mi negocio ('+k+')')}">${b.cta} <span class="ar"><span>→</span><span>→</span></span></a></div></div></div>
-  <div class="bp-r fade"><div class="gsearch">🔍 <span>${b.q}</span><span class="cur"></span></div>
-    <div class="gres ghost"><b>Tu competencia</b><small>Sin reseñas · sin fotos</small></div>
-    <div class="gres me"><div class="t1"><span>● TU NEGOCIO AQUÍ</span><span>TOP 1</span></div><b>${b.n}</b><small>${b.d}</small></div>
-    <div class="gres ghost"><b>Otro resultado</b><small>Perfil incompleto</small></div>
-    <div class="gfoot">${b.f}</div></div>`;
-}
-$('#tabs').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t)showBiz(t.dataset.k)});
-$$('[data-go]').forEach(a=>a.addEventListener('click',()=>showBiz(a.dataset.go)));
-showBiz('pizza');
+
 
 /* diagnostic form -> whatsapp */
 $('#diag').addEventListener('submit',e=>{
@@ -1190,21 +1098,9 @@ $('#qa').addEventListener('click',e=>{
   if(!open){item.classList.add('open');b.setAttribute('aria-expanded','true')}
 });
 
-/* final CTA: blur-to-sharp + scale on scroll */
-const giant=$('#giant');
-function giantUpdate(){
-  if(reduce)return;
-  const r=giant.getBoundingClientRect(),vh=innerHeight;
-  const p=Math.min(1,Math.max(0,(vh-r.top)/(vh*.75)));
-  const e=1-Math.pow(1-p,3);
-  giant.style.filter=`blur(${(1-e)*18}px)`;
-  giant.style.transform=`scale(${.86+.14*e})`;
-  giant.style.opacity=.25+.75*e;
-}
-
 /* master scroll loop */
 let tk=false;
-function onScroll(){if(tk)return;tk=true;requestAnimationFrame(()=>{navState();revealText();procUpdate();giantUpdate();tk=false})}
+function onScroll(){if(tk)return;tk=true;requestAnimationFrame(()=>{navState();revealText();procUpdate();tk=false})}
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 onScroll();
 
